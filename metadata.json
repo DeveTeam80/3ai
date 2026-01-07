@@ -1,0 +1,8 @@
+{
+  "name": "3AI - The Global Pulse of AI Leadership",
+  "description": "India's definitive professional ecosystem and unified engine for GCC excellence, elite AI leadership, and the future of intelligence.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
