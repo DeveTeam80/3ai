@@ -1161,39 +1161,59 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {NEWS_UPDATES.map((news) => (
-              <div key={news.id} className="group relative flex flex-col bg-slate-50 dark:bg-[#0f0f0f] rounded-xl border border-slate-200 dark:border-white/5 transition-all hover:border-blue-500/30 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1">
-                <div className="aspect-video relative overflow-hidden">
-                  <img src={news.image} className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" alt={news.headline} />
-                  <div className="absolute top-4 left-4">
-                    <div className="px-3 py-1 rounded-lg glass bg-white/10 text-[8px] font-black uppercase tracking-[0.2em] text-white border border-white/20 backdrop-blur-md">
-                      {news.category}
-                    </div>
-                  </div>
-                </div>
-                <div className="p-8 flex flex-col flex-1 space-y-4">
-                  <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                    <Clock size={12} />
-                    {news.timestamp}
-                  </div>
-                  <h3 className="text-xl font-black leading-tight group-hover:text-blue-600 transition-colors">
-                    {news.headline}
-                  </h3>
-                  <p className="text-sm opacity-50 font-medium line-clamp-2 leading-relaxed">
-                    {news.summary}
-                  </p>
-                  <div className="pt-6 mt-auto border-t border-slate-200 dark:border-white/5 flex items-center justify-between">
-                    <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 group/link">
-                      Share Insight
-                      <ExternalLink size={14} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-                    </button>
-                    <Linkedin size={18} className="opacity-20 group-hover:opacity-100 transition-opacity text-blue-600" />
-                  </div>
-                </div>
-              </div>
-            ))}
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  {NEWS_UPDATES.map((news) => (
+    <div 
+      key={news.id} 
+      className="group relative flex flex-col rounded-xl border border-slate-200 dark:border-white/5 transition-all hover:border-blue-500/30 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1"
+    >
+      <div className="aspect-video relative overflow-hidden">
+        <img 
+          src={news.image} 
+          className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" 
+          alt={news.headline} 
+        />
+        <div className="absolute top-4 left-4">
+          <div className="px-3 py-1 rounded-lg glass dark:bg-[#0f0f0f] bg-white/10 text-[8px] font-black uppercase tracking-[0.2em] text-white border border-white/20 backdrop-blur-md">
+            {news.category}
           </div>
+        </div>
+      </div>
+      
+      <div className="p-8 flex flex-col flex-1 space-y-4">
+        {/* Added dark:text-slate-400 so it looks good on both */}
+        <div className="flex items-center gap-2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+          <Clock size={12} />
+          {news.timestamp}
+        </div>
+
+        {/* FIX APPLIED HERE: 
+            Added 'text-slate-900' for Light Mode 
+            Added 'dark:text-white' for Dark Mode 
+        */}
+        <h3 className="text-xl font-black leading-tight group-hover:text-blue-600 transition-colors">
+          {news.headline}
+        </h3>
+
+        {/* FIX APPLIED HERE: 
+            Added 'text-slate-600' for Light Mode 
+            Added 'dark:text-slate-400' for Dark Mode 
+        */}
+        <p className="text-sm font-medium line-clamp-2 leading-relaxed text-slate-600 dark:text-slate-400">
+          {news.summary}
+        </p>
+
+        <div className="pt-6 mt-auto border-t border-slate-200 dark:border-white/5 flex items-center justify-between">
+          <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 group/link">
+            Share Insight
+            <ExternalLink size={14} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
+          </button>
+          <Linkedin size={18} className="opacity-20 group-hover:opacity-100 transition-opacity text-blue-600" />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 
