@@ -387,6 +387,16 @@ const App: React.FC = () => {
     linkedInUrl: '#'
   }
 ];
+const getColumns = (list: string[], count: number): string[][] => {
+    const cols: string[][] = Array.from({ length: count }, () => []);
+    list.forEach((item, i) => {
+      cols[i % count].push(item);
+    });
+    return cols;
+  };
+
+  const columns = getColumns(leaders, 4);
+
   return (
     <div className="min-h-screen transition-colors duration-500">
       {/* Navigation */}
@@ -950,32 +960,47 @@ const App: React.FC = () => {
               </button>
             </div>
 
-            <div className="relative">
-              <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-                {leaders.map((url, i) => (
-                  <div
-                    key={i}
-                    className={`relative aspect-square rounded-2xl overflow-hidden glass border-white/20 shadow-xl ${
-                      i % 2 === 0 ? "translate-y-4" : "-translate-y-4"
-                    }`}
-                  >
-                    <img
-                      src={url}
-                      alt="Leader"
-                      className="w-full h-full object-cover filter hover:grayscale-0 transition-all duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
-                      <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">
-                        MD, Analytics
-                      </span>
-                    </div>
-                  </div>
-                ))}
+<div className="relative h-[500px] overflow-hidden"> {/* Constrained height to prevent huge vertical size */}
+  <div className="grid grid-cols-4 gap-4 h-full"> 
+    {columns.map((colImages, colIndex) => (
+      <div key={colIndex} className="relative h-full overflow-hidden">
+        <div 
+          className={
+            colIndex % 2 === 0 
+              ? "animate-scroll-up flex flex-col gap-4"  // Tighter vertical gap
+              : "animate-scroll-down flex flex-col gap-4"
+          }
+        >
+          {/* Double the array for the loop */}
+          {[...colImages, ...colImages].map((url, i) => (
+            <div
+              key={`${colIndex}-${i}`}
+              className="relative aspect-square shrink-0 rounded-2xl overflow-hidden glass border-white/20"
+            >
+              <img
+                src={url}
+                alt="Leader"
+                className="w-full h-full object-cover filter transition-all duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity p-3 flex flex-col justify-end">
+                <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest">
+                  MD, Analytics
+                </span>
               </div>
-
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-r from-blue-600 to-purple-600/20 rounded-xl blur-3xl animate-pulse"></div>
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-600/20 rounded-xl blur-3xl animate-pulse"></div>
             </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  {/* Overlays */}
+  <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-r from-blue-600 to-purple-600/20 rounded-xl blur-3xl animate-pulse pointer-events-none"></div>
+  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-600/20 rounded-xl blur-3xl animate-pulse pointer-events-none"></div>
+  
+  {/* Fade Edges for smooth exit */}
+  <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-slate-50 via-transparent to-slate-50 dark:from-[#0f0f0f] dark:to-[#0f0f0f] opacity-20 h-full"></div>
+</div>
           </div>
         </div>
       </section>
