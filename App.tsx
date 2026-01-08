@@ -251,7 +251,7 @@ const RECOGNITIONS: RecognitionItem[] = [
     title: "Zenith Awards",
     description: "Celebrating the pinnacle of individual leadership in AI.",
     image:
-      "https://images.unsplash.com/photo-1578574577315-3fbe0eeed223?auto=format&fit=crop&q=80&w=1200",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200",
   },
   {
     id: "2",
@@ -272,7 +272,7 @@ const RECOGNITIONS: RecognitionItem[] = [
 
 export interface NewsItem {
   id: string;
-  category: 'GCC' | 'AI' | 'STRATEGY';
+  category: "GCC" | "AI" | "STRATEGY";
   timestamp: string;
   headline: string;
   summary: string;
@@ -359,35 +359,41 @@ const App: React.FC = () => {
     )
   );
   const NEWS_UPDATES: NewsItem[] = [
-  {
-    id: 'n1',
-    category: 'GCC',
-    timestamp: '2h ago',
-    headline: 'Fortune 500 Bank Expands Bangalore GCC to 5,000 Seats',
-    summary: 'The expansion focuses on centralizing global AI-driven risk orchestration and quantitative modeling.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=400',
-    linkedInUrl: '#'
-  },
-  {
-    id: 'n2',
-    category: 'AI',
-    timestamp: '5h ago',
-    headline: 'New Sovereign AI Guidelines Proposed for Indian Enterprises',
-    summary: 'MeitY outlines framework for institutionalizing local LLMs within Global Capability Centers.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=400',
-    linkedInUrl: '#'
-  },
-  {
-    id: 'n3',
-    category: 'STRATEGY',
-    timestamp: '1d ago',
-    headline: '3AI Launches Elite Mandate Pipeline for Meraki Talent',
-    summary: 'Bridging the gap between Fortune 500 CXO roles and India’s premier AI architects.',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400',
-    linkedInUrl: '#'
-  }
-];
-const getColumns = (list: string[], count: number): string[][] => {
+    {
+      id: "n1",
+      category: "GCC",
+      timestamp: "2h ago",
+      headline: "Fortune 500 Bank Expands Bangalore GCC to 5,000 Seats",
+      summary:
+        "The expansion focuses on centralizing global AI-driven risk orchestration and quantitative modeling.",
+      image:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=400",
+      linkedInUrl: "#",
+    },
+    {
+      id: "n2",
+      category: "AI",
+      timestamp: "5h ago",
+      headline: "New Sovereign AI Guidelines Proposed for Indian Enterprises",
+      summary:
+        "MeitY outlines framework for institutionalizing local LLMs within Global Capability Centers.",
+      image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=400",
+      linkedInUrl: "#",
+    },
+    {
+      id: "n3",
+      category: "STRATEGY",
+      timestamp: "1d ago",
+      headline: "3AI Launches Elite Mandate Pipeline for Meraki Talent",
+      summary:
+        "Bridging the gap between Fortune 500 CXO roles and India’s premier AI architects.",
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+      linkedInUrl: "#",
+    },
+  ];
+  const getColumns = (list: string[], count: number): string[][] => {
     const cols: string[][] = Array.from({ length: count }, () => []);
     list.forEach((item, i) => {
       cols[i % count].push(item);
@@ -510,7 +516,7 @@ const getColumns = (list: string[], count: number): string[][] => {
           <div className="space-y-8">
             <div className="overflow-hidden">
               <h1
-                className="opacity-0 animate-reveal-4s text-6xl font-black tracking-tighter leading-[0.85] text-slate-900 dark:text-white drop-shadow-2xl"
+                className="opacity-0 animate-reveal-4s text-6xl font-black tracking-tighter leading-[1.25] text-white drop-shadow-2xl"
                 style={{ animationDelay: "4s" }}
               >
                 The Global Pulse of <br />
@@ -519,7 +525,7 @@ const getColumns = (list: string[], count: number): string[][] => {
             </div>
 
             <p
-              className="opacity-0 animate-reveal-4s text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed"
+              className="opacity-0 animate-reveal-4s text-lg text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed"
               style={{ animationDelay: "4.2s" }}
             >
               India’s definitive professional ecosystem and unified engine for
@@ -596,7 +602,8 @@ const getColumns = (list: string[], count: number): string[][] => {
                 Summit Intelligence
               </div>
               <h2 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05]">
-                Where the Upper Crest Meets
+                Where the <span className="gradient-text">Upper Crest</span>{" "}
+                Meets
               </h2>
               <p className="mt-6 opacity-50 text-xl font-medium max-w-xl">
                 A panoramic circuit of elite GCC summits, AI roundtables, and
@@ -768,7 +775,7 @@ const getColumns = (list: string[], count: number): string[][] => {
               <div className="space-y-4">
                 <h2 className="text-5xl lg:text-6xl font-black leading-[1.1] tracking-tight">
                   Democratizing <br />
-                  <span className="text-blue-600">Thought Leadership</span>
+                  <span className="gradient-text">Thought Leadership</span>
                 </h2>
                 <h4 className="text-5xl font-black leading-[1.1] tracking-tight">
                   at an Institutional Scale.
@@ -954,53 +961,56 @@ const getColumns = (list: string[], count: number): string[][] => {
                   </div>
                 ))}
               </div>
-              <button className="w-full sm:w-auto px-8 py-4 bg-slate-950 dark:bg-gradient-to-r from-blue-600 to-purple-600 dark:text-slate-950 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
+              <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
                 <MailCheck size={18} />
                 Apply for Invitation
               </button>
             </div>
 
-<div className="relative h-[500px] overflow-hidden"> {/* Constrained height to prevent huge vertical size */}
-  <div className="grid grid-cols-4 gap-4 h-full"> 
-    {columns.map((colImages, colIndex) => (
-      <div key={colIndex} className="relative h-full overflow-hidden">
-        <div 
-          className={
-            colIndex % 2 === 0 
-              ? "animate-scroll-up flex flex-col gap-4"  // Tighter vertical gap
-              : "animate-scroll-down flex flex-col gap-4"
-          }
-        >
-          {/* Double the array for the loop */}
-          {[...colImages, ...colImages].map((url, i) => (
-            <div
-              key={`${colIndex}-${i}`}
-              className="relative aspect-square shrink-0 rounded-2xl overflow-hidden glass border-white/20"
-            >
-              <img
-                src={url}
-                alt="Leader"
-                className="w-full h-full object-cover filter transition-all duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity p-3 flex flex-col justify-end">
-                <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest">
-                  MD, Analytics
-                </span>
+            <div className="relative h-[500px] overflow-hidden">
+              {" "}
+              {/* Constrained height to prevent huge vertical size */}
+              <div className="grid grid-cols-4 gap-4 h-full">
+                {columns.map((colImages, colIndex) => (
+                  <div
+                    key={colIndex}
+                    className="relative h-full overflow-hidden"
+                  >
+                    <div
+                      className={
+                        colIndex % 2 === 0
+                          ? "animate-scroll-up flex flex-col gap-4" // Tighter vertical gap
+                          : "animate-scroll-down flex flex-col gap-4"
+                      }
+                    >
+                      {/* Double the array for the loop */}
+                      {[...colImages, ...colImages].map((url, i) => (
+                        <div
+                          key={`${colIndex}-${i}`}
+                          className="relative aspect-square shrink-0 rounded-2xl overflow-hidden glass border-white/20"
+                        >
+                          <img
+                            src={url}
+                            alt="Leader"
+                            className="w-full h-full object-cover filter transition-all duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity p-3 flex flex-col justify-end">
+                            <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest">
+                              MD, Analytics
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
+              {/* Overlays */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-r from-blue-600 to-purple-600/20 rounded-xl blur-3xl animate-pulse pointer-events-none"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-600/20 rounded-xl blur-3xl animate-pulse pointer-events-none"></div>
+              {/* Fade Edges for smooth exit */}
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-slate-50 via-transparent to-slate-50 dark:from-[#0f0f0f] dark:to-[#0f0f0f] opacity-20 h-full"></div>
             </div>
-          ))}
-        </div>
-      </div>
-    ))}
-  </div>
-
-  {/* Overlays */}
-  <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-r from-blue-600 to-purple-600/20 rounded-xl blur-3xl animate-pulse pointer-events-none"></div>
-  <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-600/20 rounded-xl blur-3xl animate-pulse pointer-events-none"></div>
-  
-  {/* Fade Edges for smooth exit */}
-  <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-slate-50 via-transparent to-slate-50 dark:from-[#0f0f0f] dark:to-[#0f0f0f] opacity-20 h-full"></div>
-</div>
           </div>
         </div>
       </section>
@@ -1021,7 +1031,7 @@ const getColumns = (list: string[], count: number): string[][] => {
               </p>
             </div>
             <div className="flex gap-4">
-              <button className="px-8 py-4 bg-slate-950 dark:bg-gradient-to-r from-blue-600 to-purple-600 dark:text-slate-950 text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
+              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
                 Nominate Now
               </button>
               <button className="px-6 py-3 rounded-xl border border-black/10 hover:bg-black/5 dark:hover:bg-white/5 font-bold transition-all text-xs uppercase tracking-widest">
@@ -1164,7 +1174,7 @@ const getColumns = (list: string[], count: number): string[][] => {
           </div>
         </div>
       </section>
-       {/* Market Pulse: LinkedIn Style News Section */}
+      {/* Market Pulse: LinkedIn Style News Section */}
       <section id="pulse" className="py-24 bg-[var(--bg)] transition-colors">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
@@ -1181,64 +1191,69 @@ const getColumns = (list: string[], count: number): string[][] => {
               </p>
             </div>
             <button className="px-8 py-4 glass border border-slate-200 dark:border-white/10 rounded-xl font-black text-xs uppercase tracking-widest flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-white/5 transition-all shadow-sm">
-              <Share2 size={16} />
-              Publish Update
+              Explore More
             </button>
           </div>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-  {NEWS_UPDATES.map((news) => (
-    <div 
-      key={news.id} 
-      className="group relative flex flex-col rounded-xl border border-slate-200 dark:border-white/5 transition-all hover:border-blue-500/30 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1"
-    >
-      <div className="aspect-video relative overflow-hidden">
-        <img 
-          src={news.image} 
-          className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" 
-          alt={news.headline} 
-        />
-        <div className="absolute top-4 left-4">
-          <div className="px-3 py-1 rounded-lg glass dark:bg-[#0f0f0f] bg-white/10 text-[8px] font-black uppercase tracking-[0.2em] text-white border border-white/20 backdrop-blur-md">
-            {news.category}
-          </div>
-        </div>
-      </div>
-      
-      <div className="p-8 flex flex-col flex-1 space-y-4">
-        {/* Added dark:text-slate-400 so it looks good on both */}
-        <div className="flex items-center gap-2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
-          <Clock size={12} />
-          {news.timestamp}
-        </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {NEWS_UPDATES.map((news) => (
+              <div
+                key={news.id}
+                className="group relative flex flex-col rounded-xl border border-slate-200 dark:border-white/5 transition-all hover:border-blue-500/30 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1"
+              >
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src={news.image}
+                    className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110"
+                    alt={news.headline}
+                  />
+                  <div className="absolute top-4 left-4">
+                    <div className="px-3 py-1 rounded-lg glass dark:bg-[#0f0f0f] bg-white/10 text-[8px] font-black uppercase tracking-[0.2em] text-white border border-white/20 backdrop-blur-md">
+                      {news.category}
+                    </div>
+                  </div>
+                </div>
 
-        {/* FIX APPLIED HERE: 
+                <div className="p-8 flex flex-col flex-1 space-y-4">
+                  {/* Added dark:text-slate-400 so it looks good on both */}
+                  <div className="flex items-center gap-2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+                    <Clock size={12} />
+                    {news.timestamp}
+                  </div>
+
+                  {/* FIX APPLIED HERE: 
             Added 'text-slate-900' for Light Mode 
             Added 'dark:text-white' for Dark Mode 
         */}
-        <h3 className="text-xl font-black leading-tight group-hover:text-blue-600 transition-colors">
-          {news.headline}
-        </h3>
+                  <h3 className="text-xl font-black leading-tight group-hover:text-blue-600 transition-colors">
+                    {news.headline}
+                  </h3>
 
-        {/* FIX APPLIED HERE: 
+                  {/* FIX APPLIED HERE: 
             Added 'text-slate-600' for Light Mode 
             Added 'dark:text-slate-400' for Dark Mode 
         */}
-        <p className="text-sm font-medium line-clamp-2 leading-relaxed text-slate-600 dark:text-slate-400">
-          {news.summary}
-        </p>
+                  <p className="text-sm font-medium line-clamp-2 leading-relaxed text-slate-600 dark:text-slate-400">
+                    {news.summary}
+                  </p>
 
-        <div className="pt-6 mt-auto border-t border-slate-200 dark:border-white/5 flex items-center justify-between">
-          <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 group/link">
-            Share Insight
-            <ExternalLink size={14} className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform" />
-          </button>
-          <Linkedin size={18} className="opacity-20 group-hover:opacity-100 transition-opacity text-blue-600" />
-        </div>
-      </div>
-    </div>
-  ))}
-</div>
+                  <div className="pt-6 mt-auto border-t border-slate-200 dark:border-white/5 flex items-center justify-between">
+                    <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 group/link">
+                      Share Insight
+                      <ExternalLink
+                        size={14}
+                        className="group-hover/link:translate-x-1 group-hover/link:-translate-y-1 transition-transform"
+                      />
+                    </button>
+                    <Linkedin
+                      size={18}
+                      className="opacity-20 group-hover:opacity-100 transition-opacity text-blue-600"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1404,8 +1419,8 @@ const getColumns = (list: string[], count: number): string[][] => {
         </div>
 
         <div className="max-w-7xl mx-auto pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500 font-medium">
-          <p>© 2026 3AI Global Ecosystem. All Rights Reserved.</p>
-          <p>Built for the Architects of Intelligence.</p>
+          <p>© 2026 3AI. All Rights Reserved.</p>
+          <p>Powered by <a href="https://www.visionarybizz.com/">Visionary Services</a></p>
         </div>
       </footer>
       {/* Auth Modal */}
