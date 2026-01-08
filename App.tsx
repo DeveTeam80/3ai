@@ -1054,7 +1054,7 @@ const App: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg)] via-[var(--bg)]/40 to-transparent flex items-center p-10 lg:p-14">
                     <div className="max-w-xl transition-transform duration-500 group-hover:translate-x-6">
-                      <div className="inline-block px-3 py-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600/10 text-white-600 text-[9px] font-black uppercase tracking-widest mb-6">
+                      <div className="inline-block px-3 py-1 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 text-white text-white-600 text-[9px] font-black uppercase tracking-widest mb-6">
                         Global Recognition
                       </div>
                       <h3 className="text-3xl lg:text-5xl font-black mb-4 leading-tight">
