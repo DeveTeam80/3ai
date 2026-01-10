@@ -1,6 +1,6 @@
 import React from "react";
 import ModuleGrid from "./ModuleGrid";
-import { ModuleItem } from "../types";
+import { ModuleItem } from "../../../types";
 
 const modules: ModuleItem[] = [
   {

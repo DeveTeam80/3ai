@@ -1,4 +1,3 @@
-
 export interface EventCard {
   id: string;
   title: string;
@@ -8,6 +7,7 @@ export interface EventCard {
   type: 'upcoming' | 'past';
   recordingUrl?: string;
 }
+export type TabTypes = 'Centres' | 'Meetings' | 'Stakeholders';
 
 export interface Leader {
   id: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import { ModuleItem } from "../types";
+import { ModuleItem } from "../../../types";
 
 interface ModuleGridProps {
   modules: ModuleItem[];

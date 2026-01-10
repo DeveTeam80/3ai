@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ModuleGrid from './ModuleGrid';
-import { ModuleItem } from '../types';
+import { ModuleItem } from '../../../types';
 
 const modules: ModuleItem[] = [
   {
@@ -32,7 +32,7 @@ const modules: ModuleItem[] = [
     id: 'innovation',
     title: 'UPStart',
     subtitle: 'Innovation',
-    logo: 'assets/img/subbrands/upstart-Photoroom.png', // New Field
+    logo: 'assets/img/subbrands/upstart.jpg', // New Field
     description: 'Tailored startup accelerator pipelines connecting enterprises with disruptive AI tech.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,7 +44,7 @@ const modules: ModuleItem[] = [
     id: 'intelligence',
     title: 'Outpace',
     subtitle: 'Intelligence',
-    logo: 'assets/img/subbrands/quants.png', // New Field
+    logo: '/assets/img/subbrands/74.jpg', // New Field
     description: 'Fractional AI services providing strategic speed without the massive overhead.',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
