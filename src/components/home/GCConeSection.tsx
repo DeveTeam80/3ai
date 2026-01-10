@@ -73,7 +73,7 @@ const engineModules = [
 
 const EnterpriseEngine: React.FC = () => {
   return (
-    <div className="py-24 border-t border-slate-200 dark:border-white/5 relative overflow-hidden bg-slate-100/30 dark:bg-black/20">
+    <div className="py-24 relative overflow-hidden bg-slate-100/30 dark:bg-black/20">
 
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-5">

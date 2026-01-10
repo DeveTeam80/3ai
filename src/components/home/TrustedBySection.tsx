@@ -57,7 +57,7 @@ const TrustedBySection: React.FC = () => {
   const TOKEN = "pk_WL6c2wU0TCeVlYlSMW4org";
 
   return (
-    <section className="py-20 bg-white dark:bg-slate-950 border-y border-black/5 dark:border-white/10 overflow-hidden">
+    <section className="py-20 overflow-hidden">
       {/* <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
         <h2 className="text-[11px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">
           The Industry Standard
