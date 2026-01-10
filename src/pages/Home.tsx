@@ -25,10 +25,10 @@ const Home: React.FC<HomeProps> = ({ isDarkMode }) => {
       {/* <EventsSection /> */}
       <StatsSection />
       <GCCOneSection/>
-      {/* <CoreEngineSection /> */}
       <TrustedBySection />
-      <ForumsSection />
+      {/* <CoreEngineSection /> */}
       <RecognitionSection />
+      <ForumsSection />
       <IntelligenceFeedSection />
       <MarketPulseSection />
       <CommuneSection />
