@@ -1,15 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
-import { TabTypes } from '@/types';
 import { IMPACT_DATA } from "../../data/mockData";
 import TabSwitcher from './TabSwitcher';
 import { ImpactCardItem } from './ImpactCardItem';
+import { TabTypes } from '@/types';
 
 const SummitSlider: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<TabTypes>('Centres');
+  // Set default to 'Summits'
+  const [activeTab, setActiveTab] = useState<TabTypes>('Summits');
   const scrollRef = useRef<HTMLDivElement>(null);
   
-  // Draggable State
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
@@ -17,6 +17,7 @@ const SummitSlider: React.FC = () => {
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
+  // Map the specific tab data
   const data = IMPACT_DATA[activeTab];
 
   const handleScroll = () => {
@@ -27,7 +28,6 @@ const SummitSlider: React.FC = () => {
     }
   };
 
-  // Drag Handlers
   const startDragging = (e: React.MouseEvent) => {
     if (!scrollRef.current) return;
     setIsDragging(true);
@@ -41,12 +41,16 @@ const SummitSlider: React.FC = () => {
     if (!isDragging || !scrollRef.current) return;
     e.preventDefault();
     const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
+    const walk = (x - startX) * 2; 
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
   useEffect(() => {
     handleScroll();
+    // Reset scroll position when tab changes
+    if (scrollRef.current) {
+        scrollRef.current.scrollLeft = 0;
+    }
   }, [activeTab]);
 
   const scroll = (direction: 'left' | 'right') => {
@@ -62,10 +66,10 @@ const SummitSlider: React.FC = () => {
   return (
     <div className="min-h-[80vh] bg-white dark:bg-zinc-950 text-black dark:text-white pt-20 px-4 md:px-12 lg:px-24 transition-colors">
       <div className="max-w-7xl mx-auto flex flex-col items-start mb-12">
-        <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">Impact Report 2026</span>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-8">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tighter">How we drive impact</h1>
-          <TabSwitcher activeTab={activeTab} onTabChange={setActiveTab} />
+          <h1 className="text-5xl font-bold leading-[1.1]">How <span className="gradient-text">We</span> drive Impact</h1>
+          {/* Ensure TabSwitcher handles 'Summits' | 'Roundtables' | 'Specials' */}
+          <TabSwitcher activeTab={activeTab} onTabChange={setActiveTab as any} />
         </div>
       </div>
 
@@ -79,7 +83,7 @@ const SummitSlider: React.FC = () => {
           onMouseMove={onDrag}
           className={`flex overflow-x-auto no-scrollbar gap-5 items-stretch pb-12 cursor-grab ${isDragging ? 'cursor-grabbing active:scale-[0.99] transition-transform' : ''}`}
         >
-          {/* Static Info Card - Resized to be more elegant */}
+          {/* Static Info Card */}
           <div className="flex-shrink-0 w-[320px] bg-gray-50 dark:bg-zinc-900 rounded-xl p-10 flex flex-col justify-between border border-gray-100 dark:border-zinc-800">
             <div>
               <h2 className="text-2xl font-bold mb-6 leading-tight tracking-tight">{data.subtitle}</h2>
@@ -91,6 +95,7 @@ const SummitSlider: React.FC = () => {
             </button>
           </div>
 
+          {/* Mapping content from links */}
           {data.cards.map((card) => (
             <ImpactCardItem key={card.id} card={card} />
           ))}

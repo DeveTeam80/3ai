@@ -123,39 +123,107 @@ export const SLIDES: SlideData[] = [
   },
 ];
 
+// export const IMPACT_DATA: Record<string, SectionData> = {
+//   Centres: {
+//     title: "ABOUT THE CENTRES",
+//     subtitle: "We tackle global challenges through our 11 Centres",
+//     description: "Our Centre teams convert ambition into focused action through structured initiatives and insight generation.",
+//     cards: [
+//       { id: '1', title: 'Centre for Advanced Manufacturing and Supply Chains', imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800' },
+//       { id: '2', title: 'Centre for AI Excellence', imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800' },
+//       { id: '3', title: 'Centre for Cybersecurity', imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800' },
+//       { id: '4', title: 'Centre for Energy and Materials', imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800' },
+//       { id: '5', title: 'Centre for Health and Healthcare', imageUrl: 'https://images.unsplash.com/photo-1504813184591-01592fd03cf7?auto=format&fit=crop&q=80&w=800' },
+//     ]
+//   },
+//   Meetings: {
+//     title: "UPCOMING MEETINGS",
+//     subtitle: "Engage with global leaders at our annual summits",
+//     description: "Our meetings bring together the public and private sectors to address global issues.",
+//     cards: [
+//       { id: 'm1', title: 'Annual Meeting 2025', imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800' },
+//       { id: 'm2', title: 'Growth Summit', imageUrl: 'https://images.unsplash.com/photo-1540575861501-7ad05823c93b?auto=format&fit=crop&q=80&w=800' },
+//       { id: 'm3', title: 'Climate Innovation Forum', imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800' },
+//     ]
+//   },
+//   Stakeholders: {
+//     title: "OUR STAKEHOLDERS",
+//     subtitle: "Collaboration across every industry and region",
+//     description: "We work with over 1,000 partner companies to drive measurable impact worldwide.",
+//     cards: [
+//       { id: 's1', title: 'Private Sector Leaders', imageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
+//       { id: 's2', title: 'Public Sector Partners', imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800' },
+//       { id: 's3', title: 'Civil Society & NGOs', imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800' },
+//     ]
+//   }
+// };
 
-
-export const IMPACT_DATA: Record<string, SectionData> = {
-  Centres: {
-    title: "ABOUT THE CENTRES",
-    subtitle: "We tackle global challenges through our 11 Centres",
-    description: "Our Centre teams convert ambition into focused action through structured initiatives and insight generation.",
+export const IMPACT_DATA = {
+  Summits: {
+    subtitle: "Summits & Conclaves",
+    description: "Industry-defining flagship events and conclaves that bring together the largest gathering of AI & GCC leaders in India.",
     cards: [
-      { id: '1', title: 'Centre for Advanced Manufacturing and Supply Chains', imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800' },
-      { id: '2', title: 'Centre for AI Excellence', imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800' },
-      { id: '3', title: 'Centre for Cybersecurity', imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800' },
-      { id: '4', title: 'Centre for Energy and Materials', imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800' },
-      { id: '5', title: 'Centre for Health and Healthcare', imageUrl: 'https://images.unsplash.com/photo-1504813184591-01592fd03cf7?auto=format&fit=crop&q=80&w=800' },
+      {
+        id: 1,
+        title: "BEYOND 2025",
+        date: "Feb 2025",
+        location: "Bengaluru",
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
+      },
+      {
+        id: 2,
+        title: "GCC X Summit",
+        date: "April 2025",
+        location: "Bengaluru",
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg"
+      },
+      {
+        id: 3,
+        title: "Lighthouse Bengaluru",
+        date: "Annual",
+        location: "Bengaluru",
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
+      }
     ]
   },
-  Meetings: {
-    title: "UPCOMING MEETINGS",
-    subtitle: "Engage with global leaders at our annual summits",
-    description: "Our meetings bring together the public and private sectors to address global issues.",
+  Roundtables: {
+    subtitle: "Bespoke Roundtables",
+    description: "Exclusive, closed-door curated sessions for the MDs and GCC Heads to deliberate on strategic AI and leadership mandates.",
     cards: [
-      { id: 'm1', title: 'Annual Meeting 2025', imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800' },
-      { id: 'm2', title: 'Growth Summit', imageUrl: 'https://images.unsplash.com/photo-1540575861501-7ad05823c93b?auto=format&fit=crop&q=80&w=800' },
-      { id: 'm3', title: 'Climate Innovation Forum', imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800' },
+      {
+        id: 4,
+        title: "MD & GCC Head Roundtable",
+        date: "Quarterly",
+        location: "Mumbai",
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg"
+      },
+      {
+        id: 5,
+        title: "3AI Evoke Series",
+        date: "Invite Only",
+        location: "NCR",
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
+      }
     ]
   },
-  Stakeholders: {
-    title: "OUR STAKEHOLDERS",
-    subtitle: "Collaboration across every industry and region",
-    description: "We work with over 1,000 partner companies to drive measurable impact worldwide.",
+  Specials: {
+    subtitle: "3AI Specials",
+    description: "Signature properties like AI Makers Unpacked and curated initiatives designed for niche AI ecosystem engagement.",
     cards: [
-      { id: 's1', title: 'Private Sector Leaders', imageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
-      { id: 's2', title: 'Public Sector Partners', imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800' },
-      { id: 's3', title: 'Civil Society & NGOs', imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800' },
+      {
+        id: 6,
+        title: "AI Makers Unpacked",
+        date: "Weekly",
+        location: "Digital",
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg"
+      },
+      {
+        id: 7,
+        title: "Women in AI Specials",
+        date: "Annual",
+        location: "National",
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
+      }
     ]
   }
 };

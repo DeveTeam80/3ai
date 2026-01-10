@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TabTypes } from '@/types';
 
@@ -8,18 +7,19 @@ interface TabSwitcherProps {
 }
 
 const TabSwitcher: React.FC<TabSwitcherProps> = ({ activeTab, onTabChange }) => {
-  const tabs: TabTypes[] = ['Centres', 'Meetings', 'Stakeholders'];
+  // Updated to match the data keys from the 3AI links
+  const tabs: TabTypes[] = ['Summits', 'Roundtables', 'Specials'];
 
   return (
-    <div className="inline-flex p-1 bg-gray-100 rounded-full">
+    <div className="inline-flex p-1 bg-gray-100 dark:bg-zinc-900 rounded-full transition-colors">
       {tabs.map((tab) => (
         <button
           key={tab}
           onClick={() => onTabChange(tab)}
           className={`px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
             activeTab === tab
-              ? 'bg-black text-white shadow-md'
-              : 'text-gray-600 hover:text-black'
+              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-md'
+              : 'text-gray-600 dark:text-zinc-400 hover:text-black dark:hover:text-white'
           }`}
         >
           {tab}

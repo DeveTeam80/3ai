@@ -10,7 +10,7 @@ export const ImpactCardItem: React.FC<CardProps> = ({ card }) => {
   return (
     <div className="flex-shrink-0 w-[250px] h-[320px] relative rounded-xl overflow-hidden group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 select-none">
       <img 
-        src={card.imageUrl} 
+        src={card.image} 
         alt={card.title} 
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         draggable={false}

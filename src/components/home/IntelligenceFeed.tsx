@@ -6,7 +6,7 @@ const IntelligenceFeedSection: React.FC = () => {
     <section className="py-24 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">The Intelligence Feed.</h2>
+            <h1 className="text-5xl font-bold leading-[1.1] mb-8 tracking-tighter">The <span className="gradient-text">Intelligence </span>Feed.</h1>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="group relative overflow-hidden rounded-xl h-[500px]">

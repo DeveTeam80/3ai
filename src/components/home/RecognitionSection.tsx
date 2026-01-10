@@ -64,18 +64,25 @@ const EcosystemStack: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Block Matches your Recognition Style */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-20">
-          <div>
-            <h2 className="text-5xl lg:text-7xl font-black mb-4 tracking-tighter">
-              One Ecosystem. <br />
-              <span className="text-zinc-400 font-light italic text-4xl lg:text-6xl">Infinite Intelligence.</span>
-            </h2>
-            <p className="opacity-60 text-lg font-medium max-w-xl">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-5">
+          {/* <div>
+            <span className="text-5xl font-bold leading-[1.1] font-black mb-6 tracking-tighter">
+              One Ecosystem. <span className="text-5xl font-bold leading-[1.1] gradient-text">Infinite Intelligence.</span>
+            </span>
+            <p className="text-lg max-w-xl leading-relaxed font-light ext-slate-500 dark:text-white/40 tracking-wide">
               A unified marketplace providing the infrastructure for the global AI and GCC economy.
             </p>
-          </div>
+          </div> */}
+          <div>
+          <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">
+            <span className='gradient-text'>One Ecosystem. </span>Infinite Intelligence.
+          </h1>
+          <p className="text-lg mb-12 leading-relaxed font-light tracking-wide text-slate-500 dark:text-white/40 font-light max-w-3xl">
+             A unified marketplace providing the infrastructure for the global AI and GCC economy.
+          </p>
+        </div>
           <div className="flex gap-4">
-            <button className="px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 rounded-xl font-bold flex items-center gap-2 hover:scale-105 transition-all text-xs uppercase tracking-widest shadow-xl">
+            <button className="px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold flex items-center gap-2 hover:scale-105 transition-all text-xs uppercase tracking-widest shadow-xl">
               Enter Marketplace
             </button>
           </div>
@@ -86,10 +93,9 @@ const EcosystemStack: React.FC = () => {
           {ECOSYSTEM_PILLARS.map((item, index) => (
             <div 
               key={item.id} 
-              className="sticky top-0" 
-              style={{ paddingTop: `${100 + index * 40}px` }}
+              className="sticky top-0"
             >
-              <div className="relative h-[350px] lg:h-[450px] rounded-[2rem] overflow-hidden group cursor-pointer border border-zinc-100 dark:border-white/10 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.2)] bg-white dark:bg-zinc-900 transition-all duration-500">
+              <div className="relative h-[350px] rounded-[2rem] overflow-hidden group cursor-pointer border border-zinc-100 dark:border-white/10 shadow-[0_40px_100px_-15px_rgba(0,0,0,0.2)] bg-white dark:bg-zinc-900 transition-all duration-500">
                 
                 {/* Background Image with Grayscale to Color Transition */}
                 <img 
@@ -107,15 +113,15 @@ const EcosystemStack: React.FC = () => {
                       {item.icon}
                     </div>
 
-                    <div className="inline-block px-3 py-1 rounded-full bg-zinc-100 dark:bg-white/10 text-zinc-500 dark:text-zinc-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4">
+                    <div className="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-4">
                       {item.tagline}
                     </div>
 
-                    <h3 className="text-3xl lg:text-5xl font-black mb-6 leading-tight tracking-tighter text-zinc-900 dark:text-white">
+                    <h1 className="text-5xl font-bold leading-[1.1] mb-8 tracking-tighter text-zinc-900 dark:text-white">
                       {item.title}
-                    </h3>
+                    </h1>
                     
-                    <p className="text-zinc-600 dark:text-zinc-400 text-base lg:text-xl font-medium leading-relaxed max-w-lg">
+                    <p className="text-lg max-w-xl leading-relaxed font-light tracking-wide text-zinc-600 dark:text-zinc-400 text-base">
                       {item.description}
                     </p>
                   </div>

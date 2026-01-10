@@ -1,14 +1,22 @@
 export interface ImpactCard {
-  id: string;
+  id: number;
   title: string;
-  imageUrl: string;
+  image: string; // Matches your slider component props
+  date: string;  // Using string for flexible display (e.g., "Feb 2025" or "Invite Only")
+  location: string;
+  category?: string;
 }
 
 export interface SectionData {
-  title: string;
   subtitle: string;
   description: string;
   cards: ImpactCard[];
+}
+
+export interface ImpactDataMap {
+  Summits: SectionData;
+  Roundtables: SectionData;
+  Specials: SectionData;
 }
 
 export interface EventCard {

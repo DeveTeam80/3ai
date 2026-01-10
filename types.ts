@@ -7,8 +7,9 @@ export interface EventCard {
   type: 'upcoming' | 'past';
   recordingUrl?: string;
 }
-export type TabTypes = 'Centres' | 'Meetings' | 'Stakeholders';
-
+// export type TabTypes = 'Centres' | 'Meetings' | 'Stakeholders';
+// @/types/index.ts
+export type TabTypes = 'Summits' | 'Roundtables' | 'Specials';
 export interface Leader {
   id: string;
   name: string;

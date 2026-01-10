@@ -8,12 +8,12 @@ const MarketPulseSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-16">
           <div className="space-y-4 text-center md:text-left">
-            <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.4em] text-blue-600 dark:text-blue-400">
+            {/* <div className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.4em] text-blue-600 dark:text-blue-400">
               <Linkedin size={14} /> LinkedIn Pulse
-            </div>
-            <h2 className="text-5xl font-black tracking-tight leading-tight">
+            </div> */}
+            <h1 className="text-5xl font-bold leading-[1.1] mb-8 tracking-tighter">
               Market <span className="gradient-text">Pulse.</span>
-            </h2>
+            </h1>
           </div>
           <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
             Explore More

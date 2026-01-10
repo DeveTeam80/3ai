@@ -24,10 +24,10 @@ const ForumsSection: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                Your Seat at the Table.
-              </h2>
-              <p className="text-xl text-slate-500 font-medium">
+              <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">
+                <span className="gradient-text">Your Seat</span> at the Table.
+              </h1>
+              <p className="text-lg mb-12 max-w-xl leading-relaxed font-light tracking-wide text-slate-500 font-medium">
                 Access the upper crest of global AI and GCC leadership.
               </p>
             </div>
