@@ -60,7 +60,7 @@ const SummitSlider: React.FC = () => {
   };
 
   return (
-    <div className="min-h-[80vh] bg-white dark:bg-zinc-950 text-black dark:text-white py-20 px-4 md:px-12 lg:px-24 transition-colors">
+    <div className="min-h-[80vh] bg-white dark:bg-zinc-950 text-black dark:text-white pt-20 px-4 md:px-12 lg:px-24 transition-colors">
       <div className="max-w-7xl mx-auto flex flex-col items-start mb-12">
         <span className="text-[10px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">Impact Report 2026</span>
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-8">

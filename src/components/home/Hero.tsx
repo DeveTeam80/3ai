@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = () => {
             alt=""
           />
           {/* Enhanced overlay for cinematic feel */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70" />
+          <div className="absolute inset-0" />
         </div>
       ))}
 

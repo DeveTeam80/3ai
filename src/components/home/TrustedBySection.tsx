@@ -81,7 +81,7 @@ const TrustedBySection: React.FC = () => {
                 alt={company.name}
                 loading="lazy"
                 // Increased h-14 (3.5rem) and added object-contain to prevent cropping
-                className="h-auto w-full object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
+                className="h-auto w-[70%] object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
               />
             </div>
           ))}

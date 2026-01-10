@@ -39,11 +39,11 @@ export const NEWS_UPDATES: NewsItem[] = [
 export const SLIDES: SlideData[] = [
   {
     id: 0,
-    title: "India’s Largest GCC & AI Professional Ecosystem",
+    title: "India's largest Platform and Marketplace for GCC & AI Leaders",
     tagline: "India's Definitive Marketplace",
     description:
-      "3AI is India's definitive professional marketplace. We are the unified engine for GCC excellence and elite AI leadership.",
-    ctaText: "Explore the Ecosystem",
+      "Bringing together GCC leaders, AI decision-makers, enterprises, and solution partners through forums, events, insights, and an integrated ecosystem.",
+    ctaText: "Become 3AI Member",
     image:
       "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000",
     thumbnailTitle: "What is 3AI ?",
@@ -53,34 +53,20 @@ export const SLIDES: SlideData[] = [
   },
   {
     id: 1,
-    title: "Unified Architecture for AI Innovation",
-    tagline: "Infrastructure & Platform",
+        title: "GCC ONE Platform: The B2B Enterprise Gateway",
+    tagline: "Operating System",
     description:
-      "We provide the infrastructure where 110K+ members and 980+ organizations engage to solve the most complex AI challenges.",
-    ctaText: "Access the Platform",
+      "A unified gateway for Global Capability Centers to accelerate innovation, secure elite talent, and benchmark organizational intelligence against peers.",
+    ctaText: "Explore GCC ONE",
     image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000",
-    thumbnailTitle: "The 3AI Platform",
-    duration: "4 min watch",
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
+    thumbnailTitle: "GCC ONE Platform",
+    duration: "5 min watch",
     featuredGraphic:
-      "https://images.unsplash.com/photo-1620712943543-bcc4628c9757?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
   },
   {
     id: 2,
-    title: "Exclusive Councils for Architecture & Future",
-    tagline: "Circles of Influence",
-    description:
-      "Membership to our exclusive circles: Upper Crest, GLC & TLC, is reserved for the architects of the future. We curate the Who's Who of global AI leadership.",
-    ctaText: "Request Invitation",
-    image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000",
-    thumbnailTitle: "Circles of Influence",
-    duration: "6 min read",
-    featuredGraphic:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    id: 3,
     title: "The Industry Calendar: Summits & Networking",
     tagline: "Global Summits",
     description:
@@ -94,21 +80,21 @@ export const SLIDES: SlideData[] = [
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
   },
   {
-    id: 4,
-    title: "GCC ONE Platform: The B2B Enterprise Gateway",
-    tagline: "Operating System",
+    id: 3,
+    title: "Exclusive Councils for Architecture & Future",
+    tagline: "Circles of Influence",
     description:
-      "A unified gateway for Global Capability Centers to accelerate innovation, secure elite talent, and benchmark organizational intelligence against peers.",
-    ctaText: "Explore GCC ONE",
+      "Membership to our exclusive circles: Upper Crest, GLC & TLC, is reserved for the architects of the future. We curate the Who's Who of global AI leadership.",
+    ctaText: "Request Invitation",
     image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-    thumbnailTitle: "GCC ONE Platform",
-    duration: "5 min watch",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000",
+    thumbnailTitle: "Circles of Influence",
+    duration: "6 min read",
     featuredGraphic:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800",
   },
   {
-    id: 5,
+    id: 4,
     title: "Recognizing Visionaries & Innovators",
     tagline: "Industry Awards",
     description:
@@ -121,19 +107,19 @@ export const SLIDES: SlideData[] = [
     featuredGraphic:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
   },
-  {
-    id: 6,
-    title: "Strategic Growth through Partnership",
-    tagline: "Become a Partner",
+{
+    id: 5,
+    title: "Intelligence Ecosystem: Atlas, Flix & Quants",
+    tagline: "Knowledge & Insights",
     description:
-      "Join the ecosystem where Global Capability Centers and Solution Providers find the innovation and network required to scale effectively.",
-    ctaText: "Become a Partner",
+      "A trifecta of strategic intelligence: Navigate market shifts with Atlas, master concepts through Flix video masterclasses, and benchmark performance with Quants analytical reports.",
+    ctaText: "Access Knowledge Hub",
     image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000",
-    thumbnailTitle: "Become a Partner",
-    duration: "4 min read",
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2000",
+    thumbnailTitle: "Atlas, Flix & Quants",
+    duration: "Strategic Suite",
     featuredGraphic:
-      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
   },
 ];
 

@@ -23,8 +23,12 @@ export const SlideContent: React.FC<SlideContentProps> = ({ slide }) => {
       
       <div className="flex items-center gap-8">
         {/* Primary CTA: Transparent glass style with white border */}
-        <button className="group h-14 px-10 border border-white/20 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-black hover:border-white flex items-center gap-3">
+        <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white group h-14 px-10 border border-white/20 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-black hover:border-white flex items-center gap-3">
           {slide.ctaText}
+          <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+        </button>
+         <button className="group h-14 px-10 border border-white/20 rounded-xl font-bold text-xs uppercase tracking-widest text-white transition-all duration-300 hover:bg-white hover:text-black hover:border-white flex items-center gap-3">
+          Partner with 3AI
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
         </button>
       </div>
