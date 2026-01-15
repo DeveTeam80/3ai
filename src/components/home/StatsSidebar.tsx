@@ -69,7 +69,7 @@ export const StatsSidebar: React.FC<StatsSidebarProps> = ({ isDark }) => {
             icon={stat.icon}
             isDark={isDark}
             // Logic for alternate background colors
-            bgColor={index % 2 === 0 ? "#1A1A1A" : "#2B6C94"}
+            bgColor={index % 2 === 0 ? "#1A1A1A" : "#0076da"}
           />
         ))}
       </div>

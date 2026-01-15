@@ -9,7 +9,7 @@ export interface EventCard {
 }
 // export type TabTypes = 'Centres' | 'Meetings' | 'Stakeholders';
 // @/types/index.ts
-export type TabTypes = 'Summits' | 'Roundtables' | 'Specials';
+export type TabTypes = 'Summits' | 'Roundtables' | 'Mixers';
 export interface Leader {
   id: string;
   name: string;
@@ -42,4 +42,13 @@ export interface CoreEngineContent {
   visualLabel: string;
   modules: ModuleItem[];
   ctaLabel: string;
+}
+
+
+export interface AwardItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
 }

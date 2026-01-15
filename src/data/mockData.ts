@@ -1,17 +1,85 @@
-import { EventCard, Leader, NewsItem, RecognitionItem, SlideData, ImpactCard, SectionData } from "../types";
+import { AwardItem } from '../types';
+import {
+  EventCard,
+  Leader,
+  NewsItem,
+  RecognitionItem,
+  SlideData,
+  ImpactCard,
+  SectionData,
+   InsightType, InsightItem 
+} from "../types";
 
 export const UPCOMING_EVENTS: EventCard[] = [
-  { id: "1", title: "GCC X Summit 2026", date: "March 15, 2026", location: "Bangalore / Virtual", image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg", type: "upcoming" },
-  { id: "2", title: "Zenith Awards 2025", date: "Dec 12, 2025", location: "Mumbai", image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg", type: "upcoming" },
-  { id: "3", title: "AI Leadership Forum", date: "Jan 20, 2026", location: "New Delhi", image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg", type: "upcoming" },
-  { id: "4", title: "GCC X Summit 2026", date: "March 15, 2026", location: "Bangalore / Virtual", image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg", type: "upcoming" },
-  { id: "5", title: "Zenith Awards 2025", date: "Dec 12, 2025", location: "Mumbai", image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg", type: "upcoming" },
-  { id: "6", title: "AI Leadership Forum", date: "Jan 20, 2026", location: "New Delhi", image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg", type: "upcoming" },
+  {
+    id: "1",
+    title: "GCC X Summit 2026",
+    date: "March 15, 2026",
+    location: "Bangalore / Virtual",
+    image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+    type: "upcoming",
+  },
+  {
+    id: "2",
+    title: "Zenith Awards 2025",
+    date: "Dec 12, 2025",
+    location: "Mumbai",
+    image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
+    type: "upcoming",
+  },
+  {
+    id: "3",
+    title: "AI Leadership Forum",
+    date: "Jan 20, 2026",
+    location: "New Delhi",
+    image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+    type: "upcoming",
+  },
+  {
+    id: "4",
+    title: "GCC X Summit 2026",
+    date: "March 15, 2026",
+    location: "Bangalore / Virtual",
+    image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+    type: "upcoming",
+  },
+  {
+    id: "5",
+    title: "Zenith Awards 2025",
+    date: "Dec 12, 2025",
+    location: "Mumbai",
+    image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
+    type: "upcoming",
+  },
+  {
+    id: "6",
+    title: "AI Leadership Forum",
+    date: "Jan 20, 2026",
+    location: "New Delhi",
+    image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+    type: "upcoming",
+  },
 ];
 
 export const PAST_EVENTS: EventCard[] = [
-  { id: "p1", title: "Quantum AI 2024", date: "Sept 2024", location: "On Demand", image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg", type: "past", recordingUrl: "#" },
-  { id: "p2", title: "Quantum AI 2024", date: "Sept 2025", location: "On Demand", image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg", type: "past", recordingUrl: "#" },
+  {
+    id: "p1",
+    title: "Quantum AI 2024",
+    date: "Sept 2024",
+    location: "On Demand",
+    image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+    type: "past",
+    recordingUrl: "#",
+  },
+  {
+    id: "p2",
+    title: "Quantum AI 2024",
+    date: "Sept 2025",
+    location: "On Demand",
+    image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
+    type: "past",
+    recordingUrl: "#",
+  },
 ];
 
 export const LEADERS_LIST = [
@@ -20,20 +88,84 @@ export const LEADERS_LIST = [
   "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200",
   "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200&h=200",
   "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=200&h=200",
-].concat(Array.from({ length: 10 }, (_, i) => `https://i.pravatar.cc/200?u=${i + 50}`));
+].concat(
+  Array.from({ length: 10 }, (_, i) => `https://i.pravatar.cc/200?u=${i + 50}`)
+);
 
-export const LOGOS = ["Accenture", "Google", "Wells Fargo", "Amazon", "Goldman Sachs", "J.P. Morgan", "Microsoft", "NVIDIA", "Intel", "American Express", "Adobe", "Salesforce", "Target", "Walmart", "Oracle"];
+export const LOGOS = [
+  "Accenture",
+  "Google",
+  "Wells Fargo",
+  "Amazon",
+  "Goldman Sachs",
+  "J.P. Morgan",
+  "Microsoft",
+  "NVIDIA",
+  "Intel",
+  "American Express",
+  "Adobe",
+  "Salesforce",
+  "Target",
+  "Walmart",
+  "Oracle",
+];
 
 export const RECOGNITIONS: RecognitionItem[] = [
-  { id: "1", title: "Zenith Awards", description: "Celebrating the pinnacle of individual leadership in AI.", image: "assets/img/hero/awards1.png" },
-  { id: "2", title: "ACME Awards", description: "Recognizing organizational excellence in GCCs globally.", image: "assets/img/hero/awards2.png" },
-  { id: "3", title: "The 3AI 100", description: "Our annual list of the most influential AI leaders shaping the future.", image: "assets/img/hero/awards3.png" },
+  {
+    id: "1",
+    title: "Zenith Awards",
+    description: "Celebrating the pinnacle of individual leadership in AI.",
+    image: "assets/img/hero/awards1.png",
+  },
+  {
+    id: "2",
+    title: "ACME Awards",
+    description: "Recognizing organizational excellence in GCCs globally.",
+    image: "assets/img/hero/awards2.png",
+  },
+  {
+    id: "3",
+    title: "The 3AI 100",
+    description:
+      "Our annual list of the most influential AI leaders shaping the future.",
+    image: "assets/img/hero/awards3.png",
+  },
 ];
 
 export const NEWS_UPDATES: NewsItem[] = [
-  { id: "n1", category: "GCC", timestamp: "2h ago", headline: "Fortune 500 Bank Expands Bangalore GCC to 5,000 Seats", summary: "The expansion focuses on centralizing global AI-driven risk orchestration and quantitative modeling.", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=400", linkedInUrl: "#" },
-  { id: "n2", category: "AI", timestamp: "5h ago", headline: "New Sovereign AI Guidelines Proposed for Indian Enterprises", summary: "MeitY outlines framework for institutionalizing local LLMs within Global Capability Centers.", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=400", linkedInUrl: "#" },
-  { id: "n3", category: "STRATEGY", timestamp: "1d ago", headline: "3AI Launches Elite Mandate Pipeline for Meraki Talent", summary: "Bridging the gap between Fortune 500 CXO roles and India’s premier AI architects.", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400", linkedInUrl: "#" },
+  {
+    id: "n1",
+    category: "GCC",
+    timestamp: "2h ago",
+    headline: "Fortune 500 Bank Expands Bangalore GCC to 5,000 Seats",
+    summary:
+      "The expansion focuses on centralizing global AI-driven risk orchestration and quantitative modeling.",
+    image:
+      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=400",
+    linkedInUrl: "#",
+  },
+  {
+    id: "n2",
+    category: "AI",
+    timestamp: "5h ago",
+    headline: "New Sovereign AI Guidelines Proposed for Indian Enterprises",
+    summary:
+      "MeitY outlines framework for institutionalizing local LLMs within Global Capability Centers.",
+    image:
+      "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=400",
+    linkedInUrl: "#",
+  },
+  {
+    id: "n3",
+    category: "STRATEGY",
+    timestamp: "1d ago",
+    headline: "3AI Launches Elite Mandate Pipeline for Meraki Talent",
+    summary:
+      "Bridging the gap between Fortune 500 CXO roles and India’s premier AI architects.",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=400",
+    linkedInUrl: "#",
+  },
 ];
 
 export const SLIDES: SlideData[] = [
@@ -45,15 +177,54 @@ export const SLIDES: SlideData[] = [
       "Bringing together GCC leaders, AI decision-makers, enterprises, and solution partners through forums, events, insights, and an integrated ecosystem.",
     ctaText: "Become 3AI Member",
     image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000",
+      "assets/img/hero/firstslide.jpg",
     thumbnailTitle: "What is 3AI ?",
     duration: "3 min read",
     featuredGraphic:
       "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800",
+    logos: [
+      {
+        image: "assets/img/subbrands/forbes-Photoroom.png",
+        text: "Featured in",
+      },
+      {
+        image: "assets/img/subbrands/11.png",
+        text: "Signed MoU",
+      },
+    ],
   },
   {
     id: 1,
-        title: "GCC ONE Platform: The B2B Enterprise Gateway",
+    title: "Exclusive Councils for Architecture & Future",
+    tagline: "Circles of Influence",
+    description:
+      "Membership to our exclusive circles: Upper Crest, GLC & TLC, is reserved for the architects of the future. We curate the Who's Who of global AI leadership.",
+    ctaText: "Request Invitation",
+    image:
+      "assets/img/hero/secondslide.jpg",
+    thumbnailTitle: "Circles of Influence",
+    duration: "6 min read",
+    featuredGraphic:
+      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800",
+    logos: [
+      {
+        image: "assets/img/subbrands/upper-crest.png",
+        text: "",
+      },
+      {
+        image: "assets/img/subbrands/49-Photoroom.png",
+        text: "",
+      },
+      {
+        image: "assets/img/subbrands/42-Photoroom.png",
+        text: "",
+      },
+      { image: "assets/img/subbrands/CMC.png", text: "" },
+    ],
+  },
+  {
+    id: 2,
+    title: "GCC ONE Platform: The B2B Enterprise Gateway",
     tagline: "Operating System",
     description:
       "A unified gateway for Global Capability Centers to accelerate innovation, secure elite talent, and benchmark organizational intelligence against peers.",
@@ -64,34 +235,36 @@ export const SLIDES: SlideData[] = [
     duration: "5 min watch",
     featuredGraphic:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+    logos: [
+      {
+        image: "assets/img/subbrands/GCC-ONE-Logo-Light.png",
+        text: "",
+      },
+    ],
   },
   {
-    id: 2,
+    id: 3,
     title: "The Industry Calendar: Summits & Networking",
     tagline: "Global Summits",
     description:
       "3AI summits are the industry’s calendar markers, setting the standard for networking, benchmarking, and intelligence gathering across the continent.",
     ctaText: "View Event Calendar",
     image:
-      "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=2000",
+      "assets/img/hero/535db231f7.jpg",
     thumbnailTitle: "Global and Virtual Summits",
     duration: "4 min read",
     featuredGraphic:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
-  },
-  {
-    id: 3,
-    title: "Exclusive Councils for Architecture & Future",
-    tagline: "Circles of Influence",
-    description:
-      "Membership to our exclusive circles: Upper Crest, GLC & TLC, is reserved for the architects of the future. We curate the Who's Who of global AI leadership.",
-    ctaText: "Request Invitation",
-    image:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000",
-    thumbnailTitle: "Circles of Influence",
-    duration: "6 min read",
-    featuredGraphic:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800",
+    logos: [
+      { image: "assets/img/subbrands/14.png", text: "" },
+      { image: "assets/img/subbrands/17.png", text: "" },
+      {
+        image: "assets/img/subbrands/23-Photoroom.png",
+        text: "",
+      },
+      { image: "assets/img/subbrands/15.png", text: "" },
+      { image: "assets/img/subbrands/16.png", text: "" },
+    ],
   },
   {
     id: 4,
@@ -101,13 +274,22 @@ export const SLIDES: SlideData[] = [
       "Celebrating the pinnacle of individual leadership and organizational excellence through our Zenith and ACME accolades. The Oscars of AI.",
     ctaText: "Nominate Now",
     image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=2000",
+      "assets/img/hero/awardsslide.jpg",
     thumbnailTitle: "Pinnacle Excellence Awards",
     duration: "3 min read",
     featuredGraphic:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+    logos: [
+      {
+        image: "assets/img/subbrands/61.png",
+        text: "",
+      },
+      { image: "assets/img/subbrands/62.png", text: "" },
+      { image: "assets/img/subbrands/63.png", text: "" },
+      { image: "assets/img/subbrands/64.png", text: "" },
+    ],
   },
-{
+  {
     id: 5,
     title: "Intelligence Ecosystem: Atlas, Flix & Quants",
     tagline: "Knowledge & Insights",
@@ -115,115 +297,170 @@ export const SLIDES: SlideData[] = [
       "A trifecta of strategic intelligence: Navigate market shifts with Atlas, master concepts through Flix video masterclasses, and benchmark performance with Quants analytical reports.",
     ctaText: "Access Knowledge Hub",
     image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2000",
+      "assets/img/hero/atlasslide.jpg",
     thumbnailTitle: "Atlas, Flix & Quants",
     duration: "Strategic Suite",
     featuredGraphic:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    logos: [
+      {
+        image: "assets/img/subbrands/atlas-Photoroom.png",
+        text: "",
+      },
+      {
+        image: "assets/img/subbrands/3aiflix.png",
+        text: "",
+      },
+      {
+        image: "assets/img/subbrands/quants-Photoroom.png",
+        text: "",
+      },
+    ],
   },
 ];
-
-// export const IMPACT_DATA: Record<string, SectionData> = {
-//   Centres: {
-//     title: "ABOUT THE CENTRES",
-//     subtitle: "We tackle global challenges through our 11 Centres",
-//     description: "Our Centre teams convert ambition into focused action through structured initiatives and insight generation.",
-//     cards: [
-//       { id: '1', title: 'Centre for Advanced Manufacturing and Supply Chains', imageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800' },
-//       { id: '2', title: 'Centre for AI Excellence', imageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800' },
-//       { id: '3', title: 'Centre for Cybersecurity', imageUrl: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800' },
-//       { id: '4', title: 'Centre for Energy and Materials', imageUrl: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800' },
-//       { id: '5', title: 'Centre for Health and Healthcare', imageUrl: 'https://images.unsplash.com/photo-1504813184591-01592fd03cf7?auto=format&fit=crop&q=80&w=800' },
-//     ]
-//   },
-//   Meetings: {
-//     title: "UPCOMING MEETINGS",
-//     subtitle: "Engage with global leaders at our annual summits",
-//     description: "Our meetings bring together the public and private sectors to address global issues.",
-//     cards: [
-//       { id: 'm1', title: 'Annual Meeting 2025', imageUrl: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800' },
-//       { id: 'm2', title: 'Growth Summit', imageUrl: 'https://images.unsplash.com/photo-1540575861501-7ad05823c93b?auto=format&fit=crop&q=80&w=800' },
-//       { id: 'm3', title: 'Climate Innovation Forum', imageUrl: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800' },
-//     ]
-//   },
-//   Stakeholders: {
-//     title: "OUR STAKEHOLDERS",
-//     subtitle: "Collaboration across every industry and region",
-//     description: "We work with over 1,000 partner companies to drive measurable impact worldwide.",
-//     cards: [
-//       { id: 's1', title: 'Private Sector Leaders', imageUrl: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800' },
-//       { id: 's2', title: 'Public Sector Partners', imageUrl: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800' },
-//       { id: 's3', title: 'Civil Society & NGOs', imageUrl: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800' },
-//     ]
-//   }
-// };
 
 export const IMPACT_DATA = {
   Summits: {
     subtitle: "Summits & Conclaves",
-    description: "Industry-defining flagship events and conclaves that bring together the largest gathering of AI & GCC leaders in India.",
+    description:
+      "Industry-defining flagship events and conclaves that bring together the largest gathering of AI & GCC leaders in India.",
     cards: [
       {
         id: 1,
         title: "BEYOND 2025",
         date: "Feb 2025",
         location: "Bengaluru",
-        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
       },
       {
         id: 2,
         title: "GCC X Summit",
         date: "April 2025",
         location: "Bengaluru",
-        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg"
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
       },
       {
         id: 3,
         title: "Lighthouse Bengaluru",
         date: "Annual",
         location: "Bengaluru",
-        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
-      }
-    ]
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+      },
+    ],
   },
   Roundtables: {
     subtitle: "Bespoke Roundtables",
-    description: "Exclusive, closed-door curated sessions for the MDs and GCC Heads to deliberate on strategic AI and leadership mandates.",
+    description:
+      "Exclusive, closed-door curated sessions for the MDs and GCC Heads to deliberate on strategic AI and leadership mandates.",
     cards: [
       {
         id: 4,
         title: "MD & GCC Head Roundtable",
         date: "Quarterly",
         location: "Mumbai",
-        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg"
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
       },
       {
         id: 5,
         title: "3AI Evoke Series",
         date: "Invite Only",
         location: "NCR",
-        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
-      }
-    ]
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+      },
+    ],
   },
-  Specials: {
-    subtitle: "3AI Specials",
-    description: "Signature properties like AI Makers Unpacked and curated initiatives designed for niche AI ecosystem engagement.",
+  Mixers: {
+    subtitle: "3AI Business Mixers",
+    description:
+      "Signature properties like AI Makers Unpacked and curated initiatives designed for niche AI ecosystem engagement.",
     cards: [
       {
         id: 6,
         title: "AI Makers Unpacked",
         date: "Weekly",
         location: "Digital",
-        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg"
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
       },
       {
         id: 7,
         title: "Women in AI Specials",
         date: "Annual",
         location: "National",
-        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg"
-      }
-    ]
-  }
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+      },
+    ],
+  },
 };
+
+export const INSIGHTS: InsightItem[] = [
+  {
+    id: '1',
+    type: InsightType.DOCUMENT,
+    title: 'The Global Cooperation Barometer 2026 — Key Findings',
+    pageCount: 37,
+    isNew: true,
+    link: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=300' // Placeholder for the document cover
+  },
+  {
+    id: '2',
+    type: InsightType.VIDEO,
+    title: 'Watch: The Global Cooperation Barometer 2026 press conference',
+    duration: '3 min read', // Image says "read" even for video title sometimes, or "watch"
+    isNew: true,
+    link: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: '3',
+    type: InsightType.ARTICLE,
+    title: "Global cooperation is undergoing a major shift. Here's how",
+    duration: '4 min watch',
+    isNew: true,
+    link: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: '4',
+    type: InsightType.ARTICLE,
+    title: 'The new shape of global cooperation',
+    duration: '5 min read',
+    isNew: false,
+    link: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: '5',
+    type: InsightType.VIDEO,
+    title: 'Addressing the global dialogue gap',
+    duration: '12 min watch',
+    isNew: false,
+    link: '#',
+    imageUrl: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800'
+  }
+];
+
+
+export const AWARDS_DATA: AwardItem[] = [
+  {
+    id: 'zenith',
+    title: 'Zenith Awards',
+    description: 'Celebrating the pinnacle of individual leadership and pioneering contributions to the field of AI.',
+    image: 'assets/img/hero/awards1.png',
+    category: 'Leadership'
+  },
+  {
+    id: 'acme',
+    title: 'ACME Awards',
+    description: 'Recognizing organizational excellence in Global Capability Centers (GCCs) and strategic innovation.',
+    image: 'assets/img/hero/awards2.png',
+    category: 'Organization'
+  },
+  {
+    id: '3ai-100',
+    title: 'The 3AI 100',
+    description: 'Our annual definitive list spotlighting the 100 most influential and visionary AI leaders across the globe.',
+    image: 'assets/img/hero/awards3.png',
+    category: 'Annual List'
+  }
+];

@@ -8,7 +8,7 @@ interface TabSwitcherProps {
 
 const TabSwitcher: React.FC<TabSwitcherProps> = ({ activeTab, onTabChange }) => {
   // Updated to match the data keys from the 3AI links
-  const tabs: TabTypes[] = ['Summits', 'Roundtables', 'Specials'];
+  const tabs: TabTypes[] = ['Summits', 'Roundtables', 'Mixers'];
 
   return (
     <div className="inline-flex p-1 bg-gray-100 dark:bg-zinc-900 rounded-full transition-colors">

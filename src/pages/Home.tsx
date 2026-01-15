@@ -11,6 +11,8 @@ import MarketPulseSection from "../components/home/MarketPulseSection";
 import CommuneSection from "../components/home/CommuneSection";
 import SummitSlider from "../components/home/SummitSlider";
 import GCCOneSection from "../components/home/GCConeSection";
+import WhatsNew from "../components/home/WhatsNew";
+import { AwardSection } from "../components/home/AwardSection";
 
 
 interface HomeProps {
@@ -21,6 +23,7 @@ const Home: React.FC<HomeProps> = ({ isDarkMode }) => {
   return (
     <main>
       <Hero isDarkMode={isDarkMode} />
+      <WhatsNew/>
       <SummitSlider/>
       {/* <EventsSection /> */}
       <StatsSection />
@@ -29,6 +32,7 @@ const Home: React.FC<HomeProps> = ({ isDarkMode }) => {
       {/* <CoreEngineSection /> */}
       <RecognitionSection />
       <ForumsSection />
+      <AwardSection/>
       <IntelligenceFeedSection />
       <MarketPulseSection />
       <CommuneSection />

@@ -23,7 +23,7 @@ const MarketPulseSection: React.FC = () => {
           {NEWS_UPDATES.map((news) => (
             <div key={news.id} className="group relative flex flex-col rounded-xl border border-slate-200 dark:border-white/5 transition-all hover:border-blue-500/30 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1">
               <div className="aspect-video relative overflow-hidden">
-                <img src={news.image} className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" alt={news.headline} />
+                <img src={news.image} className="w-full h-full object-cover transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110" alt={news.headline} />
                 <div className="absolute top-4 left-4">
                   <div className="px-3 py-1 rounded-lg glass dark:bg-[#0f0f0f] bg-white/10 text-[8px] font-black uppercase tracking-[0.2em] text-white border border-white/20 backdrop-blur-md">
                     {news.category}

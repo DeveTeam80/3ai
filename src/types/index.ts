@@ -16,7 +16,7 @@ export interface SectionData {
 export interface ImpactDataMap {
   Summits: SectionData;
   Roundtables: SectionData;
-  Specials: SectionData;
+  Mixers: SectionData;
 }
 
 export interface EventCard {
@@ -53,15 +53,48 @@ export interface NewsItem {
   image: string;
   linkedInUrl: string;
 }
+export interface LogoCard {
+  image: string;
+  text: string;
+}
 
 export interface SlideData {
   id: number;
   title: string;
-  tagline: string;
-  description?: string;
+  tagline?: string;
+  description: string;
   ctaText: string;
   image: string;
   thumbnailTitle: string;
   duration: string;
-  featuredGraphic?: string;
+  featuredGraphic: string;
+  logos?: LogoCard[];
+}
+
+
+export enum InsightType {
+  DOCUMENT = 'Document',
+  VIDEO = 'Video',
+  ARTICLE = 'Article'
+}
+
+export interface InsightItem {
+  id: string;
+  type: InsightType;
+  title: string;
+  subtitle?: string;
+  imageUrl?: string;
+  duration?: string; 
+  pageCount?: number;
+  isNew: boolean;
+  link: string;
+}
+
+
+export interface AwardItem {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
 }

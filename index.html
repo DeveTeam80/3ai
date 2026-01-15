@@ -4,32 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3AI | Global AI & GCC Leadership</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
       tailwind.config = {
-        darkMode: 'class',
+        darkMode: "class",
         theme: {
           extend: {
             fontFamily: {
-              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', "sans-serif"],
             },
             colors: {
               navy: {
-                900: '#0f172a',
-              }
-            }
+                900: "#0f172a",
+              },
+            },
           },
         },
-      }
+      };
     </script>
 
     <script type="importmap">
@@ -47,7 +50,9 @@
 
     <link rel="stylesheet" href="/src/index.css" />
   </head>
-  <body class="bg-[var(--bg)] text-[var(--text)] antialiased transition-colors duration-300">
+  <body
+    class="bg-[var(--bg)] text-[var(--text)] antialiased transition-colors duration-300"
+  >
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
   </body>

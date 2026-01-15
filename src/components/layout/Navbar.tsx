@@ -16,23 +16,23 @@ const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Define the navigation items
+  const navItems = ["GCCs", "Enterprises", "Startups", "AI News", "Academia"];
+
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50); // Increased threshold slightly for better UX
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // LOGIC FIX: 
-  // If we haven't scrolled, always show the light logo (logo-05) because the hero is dark.
-  // Once scrolled, switch based on the actual theme.
   const logoSrc = !isScrolled 
-    ? "assets/img/logo/logo-05.png" 
+    ? "assets/img/logo/logo-bg-black.png" 
     : isDarkMode 
-      ? "assets/img/logo/logo-05.png" 
-      : "assets/img/logo/logo-04.png";
+    ? "assets/img/logo/logo-bg-black.png"
+      : "assets/img/logo/logo-white.png" 
 
   return (
     <nav
@@ -43,8 +43,9 @@ const Navbar: React.FC<NavbarProps> = ({
       }`}
     >
       <div className="max-w-full mx-auto px-6 h-full flex items-center justify-between">
+        
         {/* Left Side: Dynamic Logo */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 shrink-0">
           <div className="relative w-28 h-12 flex items-center justify-center">
             <img 
               src={logoSrc} 
@@ -54,8 +55,25 @@ const Navbar: React.FC<NavbarProps> = ({
           </div>
         </div>
 
+        {/* Center: Desktop Navigation Links (Visible only on Desktop) */}
+        <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+          {navItems.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase().replace(" ", "-")}`}
+              className={`text-sm font-bold uppercase tracking-wider transition-colors duration-300 ${
+                isScrolled
+                  ? "text-zinc-600 dark:text-zinc-300 hover:text-blue-600 dark:hover:text-blue-400"
+                  : "text-white/80 hover:text-white"
+              }`}
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+
         {/* Right Side: Actions & Menu Trigger */}
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
           <button 
             onClick={toggleTheme} 
             className={`p-2.5 rounded-xl transition-all ${

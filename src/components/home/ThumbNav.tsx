@@ -26,7 +26,7 @@ export const ThumbnailNav: React.FC<ThumbnailNavProps> = ({ slide, isActive, onC
         src={slide.image} 
         alt={slide.thumbnailTitle} 
         // Forced brightness-[0.6] to make text readable and match dark theme
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 brightness-[0.6]"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 brightness-[1]"
       />
       
       {/* Dark overlay for text contrast */}

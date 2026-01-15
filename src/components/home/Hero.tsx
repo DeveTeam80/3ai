@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = () => {
           <img
             src={slide.image}
             // Always use dark brightness to ensure white text pops
-            className="w-full h-full object-cover transition-all duration-1000 brightness-[0.25]"
+            className="w-full h-full object-cover transition-all duration-1000 brightness-[0.5]"
             alt=""
           />
           {/* Enhanced overlay for cinematic feel */}
@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = () => {
       {/* Main Content Wrapper */}
       <div className="relative z-10 h-full flex flex-col pt-24 px-8 lg:pl-6 lg:pr-48 max-w-[1800px] mx-auto">
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-12">
             <SlideContent slide={SLIDES[activeSlide]} isDark={true} />
           </div>
         </div>
