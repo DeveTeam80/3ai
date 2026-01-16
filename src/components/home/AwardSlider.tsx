@@ -23,44 +23,53 @@ export const AwardSlider: React.FC = () => {
 
   return (
     <div 
-      className="relative w-full max-w-6xl mx-auto my-12 md:pr-16"
+      className="relative w-full max-w-7xl mx-auto my-12 md:px-16"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
     >
-      
-      <div className="relative overflow-hidden rounded-3xl bg-black shadow-2xl h-[500px] md:h-[600px]">
+      <div className="relative overflow-hidden rounded-3xl shadow-2xl min-h-[500px] md:h-[550px]">
         
+        {/* SLIDER TRACK */}
         <div 
-          className="flex transition-transform duration-700 ease-out h-full" 
+          className="flex transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] h-full" 
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {AWARDS_DATA.map((item) => (
-            <div key={item.id} className="min-w-full relative h-full">
-              <img 
-                src={item.image} 
-                alt={item.title} 
-                className="absolute inset-0 w-full h-full object-cover opacity-90"
-              />
-              <div className="absolute inset-0" />
+            <div key={item.id} className="min-w-full h-full flex flex-col md:flex-row items-center">
               
-              <div className="absolute inset-0 flex flex-col justify-center p-8 md:p-16 max-w-3xl">
-                <h3 className="text-4xl md:text-6xl font-black gradient-text mb-6 leading-tight drop-shadow-lg">
+              {/* LEFT SIDE: TEXT CONTENT */}
+              <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center order-2 md:order-1">
+                <h3 className="text-3xl md:text-5xl font-black gradient-text mb-6 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-lg leading-relaxed line-clamp-3 max-w-2xl font-medium drop-shadow-md">
+                <p className="text-gray-400 text-lg leading-relaxed line-clamp-4 font-medium mb-8">
                   {item.description}
                 </p>
-                
-                <div className="mt-8">
-                   <button className="px-6 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition transform hover:-translate-y-1 shadow-lg">
-                      View Nominees
-                   </button>
+                <div>
+                  <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-lg hover:bg-blue-600 transition transform hover:-translate-y-1 shadow-lg">
+                    View Nominees
+                  </button>
                 </div>
               </div>
+
+              {/* RIGHT SIDE: IMAGE */}
+              <div className="w-full md:w-1/2 h-[250px] md:h-full p-6 md:p-12 order-1 md:order-2">
+                <div className="relative w-full h-full rounded-2xl overflow-hidden">
+                  <img 
+                    src={item.category} 
+                    alt={item.title} 
+                    className="w-full h-full object-cover select-none"
+                  />
+                  {/* Subtle vignette/overlay for depth */}
+                  {/* <div className="absolute inset-0 bg-gradient-to-tr from-black/20 to-transparent" /> */}
+                </div>
+              </div>
+
             </div>
           ))}
         </div>
 
+        {/* DOTS NAVIGATION */}
         <div className="absolute bottom-8 left-8 md:left-16 flex gap-2 z-10">
           {AWARDS_DATA.map((_, idx) => (
             <button
@@ -69,49 +78,52 @@ export const AwardSlider: React.FC = () => {
               className={`h-1.5 transition-all duration-300 rounded-full ${
                 currentIndex === idx 
                   ? 'w-12 bg-[#0076da]' 
-                  : 'w-2 bg-black/50 hover:bg-white/50'
+                  : 'w-2 bg-zinc-400 hover:bg-white/50'
               }`}
               aria-label={`Go to slide ${idx + 1}`}
             />
           ))}
         </div>
         
-        {/* MOBILE NAVIGATION */}
+        {/* MOBILE ARROWS */}
         <div className="md:hidden absolute bottom-4 right-4 flex gap-2 z-10">
-          <button onClick={prevSlide} className="p-2 bg-black/30 rounded-full text-white backdrop-blur-md border border-white/10"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
-          <button onClick={nextSlide} className="p-2 bg-black/30 rounded-full text-white backdrop-blur-md border border-white/10"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+          <button onClick={prevSlide} className="p-2 bg-white/10 rounded-full text-white backdrop-blur-md border border-white/10"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button onClick={nextSlide} className="p-2 bg-white/10 rounded-full text-white backdrop-blur-md border border-white/10"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
         </div>
 
       </div>
-      <div className="hidden md:block absolute right-0 top-[85%] -translate-y-1/2 translate-x-1/3 z-20 w-64 aspect-[4/3] shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 hover:scale-105 group-hover:translate-x-1/4">
-         
-         <div className="absolute inset-0 rounded-xl overflow-hidden border-[4px] border-white/10 backdrop-blur-sm">
+
+      {/* FLOATING NEXT PREVIEW (MODIFIED TO BE A NAVIGATION HUB) */}
+      <div className="hidden md:block absolute right-0 top-[85%] -translate-y-1/2 translate-x-1/4 z-20 w-56 aspect-[3/2]">
+         <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl group transition-all duration-500">
              <img 
                 src={AWARDS_DATA[nextIndex].category} 
                 alt="Next" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover opacity-80 transition-opacity"
              />
-             
-             {/* <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end justify-center p-4 pb-12">
-                <p className="text-white text-sm font-semibold text-center leading-tight">
+             <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center">
+                <span className="text-[10px] uppercase tracking-[0.2em] gradient-text font-bold mb-2">Up Next</span>
+                {/* <p className="text-white text-xs font-bold leading-tight">
                     {AWARDS_DATA[nextIndex].title}
-                </p>
-             </div> */}
+                </p> */}
+             </div>
+
+             {/* NAVIGATION BUTTONS */}
+             <div className="absolute inset-x-0 bottom-4 flex justify-center gap-4">
+               <button 
+                  onClick={prevSlide}
+                  className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all shadow-xl"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+               </button>
+               <button 
+                  onClick={nextSlide}
+                  className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all shadow-xl"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+               </button>
+             </div>
          </div>
-
-         <button 
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-zinc-500/80 border text-white flex items-center justify-center hover:bg-[#0076da] hover:text-white hover:border-[#0076da] transition-all shadow-lg z-30 backdrop-blur-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-         </button>
-
-         <button 
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-12 h-12 rounded-full bg-zinc-500/80 text-white flex items-center justify-center hover:bg-[#0076da] hover:text-white hover:border-[#0076da] transition-all shadow-lg z-30 backdrop-blur-sm"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-         </button>
       </div>
     </div>
   );

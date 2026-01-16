@@ -1,11 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+interface HeroProps {
+  isDarkMode: boolean;
+}
+
+// 1. Define logos that you know look the same or don't have dark/light variants
+// This prevents unnecessary "theme" requests for brands like Barclays or Pepsi.
+const brandsWithSingleLogo = [
+  "barclays.com",
+  "abb.com",
+  "americanexpress.com",
+  "bosch.com",
+  "carrier.com",
+  "dupont.com",
+  "ebay.com",
+  "pepsi.com",
+  "visa.com",
+  "mastercard.com",
+  "jpmorganchase.com",
+  "fidelity.com"
+];
 
 const partnerList = [
   { name: "ABB", domain: "abb.com" },
-  { name: "ABInBev", domain: "ab-inbev.com" },
+  // { name: "ABInBev", domain: "ab-inbev.com" },
   { name: "Advance Auto Parts", domain: "advanceautoparts.com" },
   { name: "American Express", domain: "americanexpress.com" },
-  { name: "Anko", domain: "anko.com" },
   { name: "Applied Materials", domain: "appliedmaterials.com" },
   { name: "Barclays", domain: "barclays.com" },
   { name: "Bosch", domain: "bosch.com" },
@@ -53,28 +73,31 @@ const partnerList = [
   { name: "Wells Fargo", domain: "wellsfargo.com" },
 ];
 
-const TrustedBySection: React.FC = () => {
-  const TOKEN = "pk_WL6c2wU0TCeVlYlSMW4org";
+const TrustedBySection: React.FC<HeroProps> = ({ isDarkMode }) => {
+  const getLogoUrl = (domain: string) => {
+    const baseUrl = `https://cdn.brandfetch.io/${domain}/w/400/h/30`;
+    const suffix = "?c=1iderWt-xdd8cP9uNSp";
+
+    if (isDarkMode && !brandsWithSingleLogo.includes(domain)) {
+      return `${baseUrl}/theme/light/logo${suffix}`;
+    }
+    return `${baseUrl}/logo${suffix}`;
+  };
 
   return (
     <section className="py-20 overflow-hidden">
-      <div className="relative flex overflow-hidden group [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-        {/* Added [animation-duration:20s] 
-           Adjust this number: 
-           - 15s = Faster
-           - 60s = Slower
-        */}
-        <div className="flex animate-infinite-scroll [animation-duration:20s] whitespace-nowrap py-4 min-w-full items-center">
+      <div className="relative flex overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+        <div className="flex animate-infinite-scroll [animation-duration:50s] whitespace-nowrap py-4 min-w-full items-center">
           {[...partnerList, ...partnerList].map((company, i) => (
             <div
-              key={`${company.name}-${i}`}
-              className="mx-14 flex items-center justify-center min-w-[160px]"
+              key={`${company.domain}-${i}`}
+              className="mx-2 flex items-center justify-center min-w-[140px]"
             >
               <img
-                src={`https://img.logo.dev/${company.domain}?token=${TOKEN}&format=png`}
+                src={getLogoUrl(company.domain)}
                 alt={company.name}
                 loading="lazy"
-                className="h-auto w-auto object-contain transition-all duration-500 cursor-pointer"
+                className="h-8 w-auto object-contain transition-all duration-500 cursor-pointer"
               />
             </div>
           ))}
