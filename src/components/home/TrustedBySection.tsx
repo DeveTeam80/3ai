@@ -58,19 +58,13 @@ const TrustedBySection: React.FC = () => {
 
   return (
     <section className="py-20 overflow-hidden">
-      {/* <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-        <h2 className="text-[11px] font-black uppercase tracking-[0.4em] opacity-40 mb-2">
-          The Industry Standard
-        </h2>
-        <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">
-          Trusted by 980+ Organizations & 430+ Global Capability Centers
-        </p>
-      </div> */}
-
-      {/* Masking container for the fade effect on edges */}
       <div className="relative flex overflow-hidden group [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-        {/* Row 1 */}
-        <div className="flex animate-infinite-scroll whitespace-nowrap py-4 min-w-full items-center">
+        {/* Added [animation-duration:20s] 
+           Adjust this number: 
+           - 15s = Faster
+           - 60s = Slower
+        */}
+        <div className="flex animate-infinite-scroll [animation-duration:20s] whitespace-nowrap py-4 min-w-full items-center">
           {[...partnerList, ...partnerList].map((company, i) => (
             <div
               key={`${company.name}-${i}`}
@@ -80,8 +74,7 @@ const TrustedBySection: React.FC = () => {
                 src={`https://img.logo.dev/${company.domain}?token=${TOKEN}&format=png`}
                 alt={company.name}
                 loading="lazy"
-                // Increased h-14 (3.5rem) and added object-contain to prevent cropping
-                className="h-auto w-[70%] object-contain grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-500 cursor-pointer"
+                className="h-auto w-auto object-contain transition-all duration-500 cursor-pointer"
               />
             </div>
           ))}

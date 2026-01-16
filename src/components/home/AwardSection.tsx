@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { AwardSlider } from './AwardSlider';
-import { ArrowRight } from 'lucide-react';
 
 export const AwardSection: React.FC = () => {
   return (

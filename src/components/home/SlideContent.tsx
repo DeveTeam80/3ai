@@ -53,15 +53,15 @@ export const SlideContent: React.FC<SlideContentProps> = ({ slide }) => {
             className={`
               opacity-90
               ${getGridClass(logos.length)}
-              ${logos.length === 3 || logos.length > 4 ? "gap-8" : "gap-4"}
+              ${logos.length === 3 || logos.length > 4 ? "gap-8" : "gap-12"}
             `}
           >
-{logos.map((logoItem, index) => (
-  <div
-    key={index}
-    className={`
+            {logos.map((logoItem, index) => (
+              <div
+                key={index}
+                className={`
       flex flex-col items-center text-center
-      ${logos.length === 1 ? "w-64" : "w-full lg:w-48"} 
+      ${logos.length === 1 ? "w-64" : "w-full lg:w-[13rem]"} 
       ${
         isFirstSlide
           ? `
@@ -76,24 +76,24 @@ export const SlideContent: React.FC<SlideContentProps> = ({ slide }) => {
           : ""
       }
     `}
-  >
-    {/* Suble highlight flare for extra elegance */}
-    {isFirstSlide && (
-      <div className="absolute -top-10 -left-10 w-20 h-20 bg-white/10 blur-3xl rounded-full pointer-events-none" />
-    )}
+              >
+                {/* Suble highlight flare for extra elegance */}
+                {isFirstSlide && (
+                  <div className="absolute -top-10 -left-10 w-20 h-20 bg-white/10 blur-3xl rounded-full pointer-events-none" />
+                )}
 
-    <p className="text-xl text-white/90 font-semibold leading-tight tracking-wide mb-4 z-10">
-      {logoItem.text}
-    </p>
-    <div className="h-32 w-full flex items-center justify-center z-10">
-      <img
-        src={logoItem.image}
-        alt={logoItem.text}
-        className="max-w-[80%] max-h-full object-contain filter drop-shadow-lg"
-      />
-    </div>
-  </div>
-))}
+                <p className="text-xl text-white/90 font-semibold leading-tight tracking-wide mb-4 z-10">
+                  {logoItem.text}
+                </p>
+                <div className="h-32 w-full flex items-center justify-center z-10">
+                  <img
+                    src={logoItem.image}
+                    alt={logoItem.text}
+                    className="max-w-[80%] max-h-full object-contain filter drop-shadow-lg"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       )}

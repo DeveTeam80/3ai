@@ -25,6 +25,7 @@ const Home: React.FC<HomeProps> = ({ isDarkMode }) => {
       <Hero isDarkMode={isDarkMode} />
       <WhatsNew/>
       <SummitSlider/>
+      
       {/* <EventsSection /> */}
       <StatsSection />
       <TrustedBySection />

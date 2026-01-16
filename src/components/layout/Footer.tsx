@@ -22,7 +22,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           <div className="flex items-center gap-2">
             <div className="relative w-32 h-12 flex items-center justify-center">
               <img
-                src="assets/img/logo/logo-05.png"
+                src="assets/img/logo/logo-bg-black.png"
                 alt="3AI Logo"
                 className="w-full h-auto object-contain transition-transform duration-300 hover:scale-105"
               />

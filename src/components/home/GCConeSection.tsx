@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { 
   Mic2, 
   Award, 
@@ -7,6 +7,153 @@ import {
   Zap,
   Target
 } from 'lucide-react';
+
+/* -------------------------------------------------------------------------- */
+/* 1. DOTTED GLOW BACKGROUND                                                  */
+/* (Structure/Math from your snippet + Gradient Fix for Visibility)           */
+/* -------------------------------------------------------------------------- */
+
+type DottedGlowBackgroundProps = {
+  className?: string;
+  gap?: number;
+  radius?: number;
+  glowColor?: string;
+  opacity?: number;
+  speedMin?: number;
+  speedMax?: number;
+  speedScale?: number;
+};
+
+function DottedGlowBackground({
+  className,
+  gap = 15, // Adjusted slightly from 12 to 15 for better background spacing
+  radius = 2,
+  glowColor = "#ffcbe4", // Soft pink glow for high intensity
+  opacity = 1,
+  speedMin = 0.5,
+  speedMax = 1.5,
+  speedScale = 0.8,
+}: DottedGlowBackgroundProps) {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = canvasRef.current;
+    const container = containerRef.current;
+    if (!el || !container) return;
+
+    const ctx = el.getContext("2d");
+    if (!ctx) return;
+
+    let raf = 0;
+    let stopped = false;
+
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+
+    const resize = () => {
+      const { width, height } = container.getBoundingClientRect();
+      el.width = Math.max(1, Math.floor(width * dpr));
+      el.height = Math.max(1, Math.floor(height * dpr));
+      el.style.width = `${width}px`;
+      el.style.height = `${height}px`;
+      ctx.scale(dpr, dpr);
+    };
+
+    const ro = new ResizeObserver(resize);
+    ro.observe(container);
+    setTimeout(resize, 0);
+
+    // --- GRID GENERATION (From your code) ---
+    // This creates a staggered grid. The "randomness" comes from the phase/speed properties.
+    let dots: { x: number; y: number; phase: number; speed: number }[] = [];
+
+    const regenDots = () => {
+      dots = [];
+      const { width, height } = container.getBoundingClientRect();
+      const cols = Math.ceil(width / gap) + 2;
+      const rows = Math.ceil(height / gap) + 2;
+      for (let i = -1; i < cols; i++) {
+        for (let j = -1; j < rows; j++) {
+          // Staggered grid logic
+          const x = i * gap + (j % 2 === 0 ? 0 : gap * 0.5);
+          const y = j * gap;
+          dots.push({
+            x,
+            y,
+            phase: Math.random() * Math.PI * 2, // Random starting blink phase
+            speed: speedMin + Math.random() * (speedMax - speedMin), // Random blink speed
+          });
+        }
+      }
+    };
+
+    regenDots();
+    window.addEventListener("resize", regenDots);
+
+    const draw = (now: number) => {
+      if (stopped) return;
+      const { width, height } = container.getBoundingClientRect();
+      ctx.clearRect(0, 0, width, height);
+      ctx.globalAlpha = opacity;
+
+      // --- GRADIENT DEFINITION ---
+      // We create the gradient here to replace the white 'color' prop
+      // This ensures dots are visible on the light gray background
+      const gradient = ctx.createLinearGradient(0, 0, width, height);
+      gradient.addColorStop(0, "#7b4397"); // Purple
+      gradient.addColorStop(1, "#dc2430"); // Red
+
+      const time = (now / 1000) * speedScale;
+
+      dots.forEach((d) => {
+        // --- ANIMATION MATH (From your code) ---
+        const mod = (time * d.speed + d.phase) % 2;
+        const lin = mod < 1 ? mod : 2 - mod;
+        const intensity = 0.1 + 0.9 * (lin * lin);
+
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, radius, 0, Math.PI * 2);
+        
+        // Apply styling based on intensity
+        if (intensity > 0.7) {
+           // High intensity: Glow Color
+           ctx.fillStyle = glowColor;
+           ctx.shadowColor = glowColor;
+           ctx.shadowBlur = 8 * (intensity - 0.7) * 3;
+        } else {
+           // Low intensity: Gradient (Replacement for white color)
+           ctx.fillStyle = gradient;
+           ctx.shadowBlur = 0;
+        }
+        
+        // Opacity calculation from your code
+        ctx.globalAlpha = opacity * (intensity > 0.7 ? 1 : 0.3 + intensity * 0.5); 
+        ctx.fill();
+      });
+
+      raf = requestAnimationFrame(draw);
+    };
+
+    raf = requestAnimationFrame(draw);
+
+    return () => {
+      stopped = true;
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", regenDots);
+      ro.disconnect();
+    };
+  }, [gap, radius, glowColor, opacity, speedMin, speedMax, speedScale]);
+
+  return (
+    <div ref={containerRef} className={className} style={{ position: "absolute", inset: 0, zIndex: 0 }}>
+      <canvas ref={canvasRef} style={{ display: "block" }} />
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. MAIN ENTERPRISE ENGINE COMPONENT                                        */
+/* -------------------------------------------------------------------------- */
 
 const engineModules = [
   {
@@ -75,16 +222,22 @@ const EnterpriseEngine: React.FC = () => {
   return (
     <div className="py-24 relative overflow-hidden bg-slate-100/30 dark:bg-black/20">
 
-      <div className="max-w-7xl mx-auto px-6">
+      {/* --- BACKGROUND ANIMATION --- */}
+      <DottedGlowBackground 
+        gap={25} // Increased slightly to make it look cleaner as a background
+        radius={1.5}
+        opacity={0.6}
+        glowColor="#ffcbe4"
+        className="pointer-events-none"
+      />
+      
+      {/* Content Wrapper */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="mb-5">
-          {/* <div className="flex items-center gap-4 mb-4">
-             <div className="w-12 h-[1px] bg-gradient-to-r from-blue-600 to-purple-600"></div>
-             <span className="text-[10px] font-black tracking-[0.4em] gradient-text uppercase">Operating Framework</span>
-          </div> */}
           <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">
             <span className='gradient-text'>GCC ONE Platform</span>: The Enterprise Engine
           </h2>
-          <p className="text-lg mb-12 leading-relaxed font-light tracking-wide text-slate-500 dark:text-white/40 font-light max-w-3xl">
+          <p className="text-lg mb-12 leading-relaxed font-light tracking-wide text-slate-500 dark:text-white/40 max-w-3xl">
             A high-octane enterprise engine for Global Capability Centers to accelerate innovation, 
             secure elite talent, and benchmark intelligence.
           </p>
@@ -106,7 +259,6 @@ const EnterpriseEngine: React.FC = () => {
                    </div>
                 </div>
                 <div className="space-y-1">
-                   {/* Gradient applied to Category */}
                    <h4 className="text-[10px] font-bold gradient-text uppercase tracking-widest">{module.category}</h4>
                    <h3 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight">{module.title}</h3>
                 </div>
@@ -125,7 +277,6 @@ const EnterpriseEngine: React.FC = () => {
 
               <div className="mt-8 pt-6 border-t border-slate-100 dark:border-white/5">
                 {module.cta ? (
-                  /* Gradient applied to CTA button text */
                   <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest gradient-text hover:brightness-125 transition-all">
                     {module.cta}
                     <ChevronRight className="w-3 h-3 text-blue-500" />

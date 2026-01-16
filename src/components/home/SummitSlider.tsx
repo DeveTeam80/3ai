@@ -115,6 +115,11 @@ const SummitSlider: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* --- BOTTOM SECTION: Horizontal Ad --- */}
+        <div className="w-full h-32 bg-slate-200/50 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-slate-400 gap-2">
+           <span className="text-xs uppercase font-bold tracking-widest">Advertisement</span>
+           <span className="text-sm">Horizontal Banner (728x90)</span>
+        </div>
     </div>
   );
 };

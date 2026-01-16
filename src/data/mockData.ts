@@ -189,7 +189,7 @@ export const SLIDES: SlideData[] = [
       },
       {
         image: "assets/img/subbrands/11.png",
-        text: "Signed MoU",
+        text: "Recognised By",
       },
     ],
   },
@@ -346,6 +346,27 @@ export const IMPACT_DATA = {
         location: "Bengaluru",
         image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
       },
+      {
+        id: 4,
+        title: "BEYOND 2025",
+        date: "Feb 2025",
+        location: "Bengaluru",
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+      },
+      {
+        id: 5,
+        title: "GCC X Summit",
+        date: "April 2025",
+        location: "Bengaluru",
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
+      },
+      {
+        id: 6,
+        title: "Lighthouse Bengaluru",
+        date: "Annual",
+        location: "Bengaluru",
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+      },
     ],
   },
   Roundtables: {
@@ -354,14 +375,28 @@ export const IMPACT_DATA = {
       "Exclusive, closed-door curated sessions for the MDs and GCC Heads to deliberate on strategic AI and leadership mandates.",
     cards: [
       {
-        id: 4,
+        id: 7,
         title: "MD & GCC Head Roundtable",
         date: "Quarterly",
         location: "Mumbai",
         image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
       },
       {
-        id: 5,
+        id: 8,
+        title: "3AI Evoke Series",
+        date: "Invite Only",
+        location: "NCR",
+        image: "assets/img/hero/GCCX25-Fireside-3-768x432.jpeg",
+      },
+      {
+        id: 9,
+        title: "MD & GCC Head Roundtable",
+        date: "Quarterly",
+        location: "Mumbai",
+        image: "assets/img/hero/GCCX25-Fireside-Lalit-768x432.jpeg",
+      },
+      {
+        id: 10,
         title: "3AI Evoke Series",
         date: "Invite Only",
         location: "NCR",
@@ -447,20 +482,20 @@ export const AWARDS_DATA: AwardItem[] = [
     title: 'Zenith Awards',
     description: 'Celebrating the pinnacle of individual leadership and pioneering contributions to the field of AI.',
     image: 'assets/img/hero/awards1.png',
-    category: 'Leadership'
+    category: 'assets/img/subbrands/63.png'
   },
   {
     id: 'acme',
     title: 'ACME Awards',
     description: 'Recognizing organizational excellence in Global Capability Centers (GCCs) and strategic innovation.',
     image: 'assets/img/hero/awards2.png',
-    category: 'Organization'
+    category: 'assets/img/subbrands/62.png'
   },
   {
     id: '3ai-100',
     title: 'The 3AI 100',
     description: 'Our annual definitive list spotlighting the 100 most influential and visionary AI leaders across the globe.',
     image: 'assets/img/hero/awards3.png',
-    category: 'Annual List'
+    category: 'assets/img/subbrands/61.png'
   }
 ];

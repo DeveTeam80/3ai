@@ -23,11 +23,9 @@ const Hero: React.FC<HeroProps> = () => {
         >
           <img
             src={slide.image}
-            // Always use dark brightness to ensure white text pops
             className="w-full h-full object-cover transition-all duration-1000 brightness-[0.5]"
             alt=""
           />
-          {/* Enhanced overlay for cinematic feel */}
           <div className="absolute inset-0" />
         </div>
       ))}
