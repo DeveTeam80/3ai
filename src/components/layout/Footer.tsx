@@ -64,7 +64,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
 
         {/* Navigation Columns */}
         <div className="space-y-6">
-          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-blue-500">Platform</h4>
+          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-[#f4c70e]">Platform</h4>
           <ul className="space-y-4 text-slate-400 font-medium text-sm">
             <li><a href="#" className="hover:text-white transition-colors">Marketplace</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Atlas Knowledge</a></li>
@@ -74,7 +74,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
         </div>
 
         <div className="space-y-6">
-          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-blue-500">Exclusives</h4>
+          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-[#f4c70e]">Exclusives</h4>
           <ul className="space-y-4 text-slate-400 font-medium text-sm">
             <li><a href="#" className="hover:text-white transition-colors">Upper Crest</a></li>
             <li><a href="#" className="hover:text-white transition-colors">TLC Forum</a></li>
@@ -84,7 +84,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
         </div>
 
         <div className="space-y-6">
-          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-blue-500">Company</h4>
+          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-[#f4c70e]">Company</h4>
           <ul className="space-y-4 text-slate-400 font-medium text-sm">
             <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Partner With Us</a></li>
@@ -94,7 +94,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
         </div>
 
         <div className="space-y-6">
-          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-blue-500">Legal</h4>
+          <h4 className="font-bold uppercase text-xs tracking-[0.2em] text-[#f4c70e]">Legal</h4>
           <ul className="space-y-4 text-slate-400 font-medium text-sm">
             <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
             <li><a href="#" className="hover:text-white transition-colors">Terms of Use</a></li>
