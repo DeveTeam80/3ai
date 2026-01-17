@@ -4,9 +4,9 @@ import AnimatedCounter from "./AnimatedCounter";
 
 const StatsSection: React.FC = () => {
   return (
-    <section className="py-24 bg-[var(--bg)] text-[var(--text)] transition-colors duration-500 overflow-hidden">
+    <section className="py-12 bg-[var(--bg)] text-[var(--text)] transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch pb-20">
           <div className="flex flex-col">
             <div className="relative group rounded-2xl overflow-hidden shadow-xl border border-[var(--border-light)] flex-grow mb-8">
               <img
@@ -49,25 +49,25 @@ const StatsSection: React.FC = () => {
                 Democratizing <br />{" "}
                 <span className="gradient-text">Thought Leadership</span>
               </h1>
-              <h4 className="text-3xl lg:text-4xl font-bold opacity-90 leading-tight">
+              {/* <h4 className="text-3xl lg:text-4xl font-bold opacity-90 leading-tight">
                 at an Institutional Scale.
-              </h4>
+              </h4> */}
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 {
                   icon: <Target className="w-6 h-6" />,
-                  title: "The Marketplace",
+                  title: "Networking",
                   desc: "A unified engine for GCC & AI professionals to access elite mandates.",
                 },
                 {
                   icon: <Eye className="w-6 h-6" />,
-                  title: "Enterprise Scale",
+                  title: "Speaking",
                   desc: "Empowering partner enterprises with high-velocity innovation access.",
                 },
                 {
                   icon: <Trophy className="w-6 h-6" />,
-                  title: "Institutionalizing AI",
+                  title: "Publishing",
                   desc: "Premier professional network for the upper crest of India's GCCs.",
                 },
               ].map((feature, idx) => (
@@ -97,7 +97,13 @@ const StatsSection: React.FC = () => {
             </div>
           </div>
         </div>
+              {/* --- BOTTOM SECTION: Horizontal Ad --- */}
+        <div className="w-full h-32 bg-slate-200/50 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-slate-400 gap-2">
+           <span className="text-xs uppercase font-bold tracking-widest">Advertisement</span>
+           <span className="text-sm">Horizontal Banner (728x90)</span>
+        </div>
       </div>
+      
     </section>
   );
 };

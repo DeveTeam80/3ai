@@ -171,54 +171,37 @@ export const NEWS_UPDATES: NewsItem[] = [
 export const SLIDES: SlideData[] = [
   {
     id: 0,
-    title: "India's largest Platform and Marketplace for GCC & AI Leaders",
+    title: "India's largest Platform and Marketplace for GCC & AI Leaders and leaders",
     tagline: "India's Definitive Marketplace",
     description:
-      "Bringing together GCC leaders, AI decision-makers, enterprises, and solution partners through forums, events, insights, and an integrated ecosystem.",
+      "Integrated Platform and Marketplace for leaders, decision-makers, professionals from GCCs, Enterprises and Start-ups.",
     ctaText: "Become 3AI Member",
-    image:
-      "assets/img/hero/firstslide.jpg",
+    image: "assets/img/hero/firstslide.jpg",
     thumbnailTitle: "What is 3AI ?",
     duration: "3 min read",
     featuredGraphic:
       "https://images.unsplash.com/photo-1639322537228-f710d846310a?auto=format&fit=crop&q=80&w=800",
     logos: [
-      {
-        image: "assets/img/subbrands/forbes-Photoroom.png",
-        text: "Featured in",
-      },
-      {
-        image: "assets/img/subbrands/11.png",
-        text: "Recognised By",
-      },
+      { image: "assets/img/subbrands/forbes-Photoroom.png", text: "Featured in" },
+      { image: "assets/img/subbrands/11.png", text: "Recognised By" },
     ],
   },
   {
     id: 1,
-    title: "Exclusive Councils for Architecture & Future",
+    title: "Bespoke Leadership Forums",
     tagline: "Circles of Influence",
     description:
-      "Membership to our exclusive circles: Upper Crest, GLC & TLC, is reserved for the architects of the future. We curate the Who's Who of global AI leadership.",
-    ctaText: "Request Invitation",
-    image:
-      "assets/img/hero/secondslide.jpg",
+      "3AI Forums bring together top executives, thought leaders, GCC leaders and emerging professionals to accentuate their thought leadership, share knowledge, drive innovation and shape the future of AI.",
+    ctaText: "Express Interest",
+    image: "assets/img/hero/secondslide.jpg",
     thumbnailTitle: "Circles of Influence",
     duration: "6 min read",
     featuredGraphic:
       "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&q=80&w=800",
     logos: [
-      {
-        image: "assets/img/subbrands/upper-crest.png",
-        text: "",
-      },
-      {
-        image: "assets/img/subbrands/49-Photoroom.png",
-        text: "",
-      },
-      {
-        image: "assets/img/subbrands/42-Photoroom.png",
-        text: "",
-      },
+      { image: "assets/img/subbrands/upper-crest.png", text: "" },
+      { image: "assets/img/subbrands/49-Photoroom.png", text: "" },
+      { image: "assets/img/subbrands/42-Photoroom.png", text: "" },
       { image: "assets/img/subbrands/CMC.png", text: "" },
     ],
   },
@@ -227,7 +210,7 @@ export const SLIDES: SlideData[] = [
     title: "GCC ONE Platform: The B2B Enterprise Gateway",
     tagline: "Operating System",
     description:
-      "A unified gateway for Global Capability Centers to accelerate innovation, secure elite talent, and benchmark organizational intelligence against peers.",
+      "The most comprehensive suite of GCC-focused properties under one umbrella with a 5 x 15 Framework - creating an unparalleled platform for thought leadership, positioning, branding, talent visibility and ecosystem engagement.",
     ctaText: "Explore GCC ONE",
     image:
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
@@ -236,21 +219,17 @@ export const SLIDES: SlideData[] = [
     featuredGraphic:
       "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
     logos: [
-      {
-        image: "assets/img/subbrands/GCC-ONE-Logo-Light.png",
-        text: "",
-      },
+      { image: "assets/img/subbrands/GCC-ONE-Logo-Light.png", text: "" },
     ],
   },
   {
     id: 3,
-    title: "The Industry Calendar: Summits & Networking",
+    title: "Events & Conferences",
     tagline: "Global Summits",
     description:
-      "3AI summits are the industry’s calendar markers, setting the standard for networking, benchmarking, and intelligence gathering across the continent.",
+      "Conceptualize and execute pathbreaking & pioneering summits, conferences and speaking interventions with innovative formats, & session tracks to bring out the next-in-class themes & topics in AI arena.",
     ctaText: "View Event Calendar",
-    image:
-      "assets/img/hero/535db231f7.jpg",
+    image: "assets/img/hero/535db231f7.jpg",
     thumbnailTitle: "Global and Virtual Summits",
     duration: "4 min read",
     featuredGraphic:
@@ -258,32 +237,25 @@ export const SLIDES: SlideData[] = [
     logos: [
       { image: "assets/img/subbrands/14.png", text: "" },
       { image: "assets/img/subbrands/17.png", text: "" },
-      {
-        image: "assets/img/subbrands/23-Photoroom.png",
-        text: "",
-      },
+      { image: "assets/img/subbrands/23-Photoroom.png", text: "" },
       { image: "assets/img/subbrands/15.png", text: "" },
       { image: "assets/img/subbrands/16.png", text: "" },
     ],
   },
   {
     id: 4,
-    title: "Recognizing Visionaries & Innovators",
+    title: "Credible Industry Recognition Awards",
     tagline: "Industry Awards",
     description:
-      "Celebrating the pinnacle of individual leadership and organizational excellence through our Zenith and ACME accolades. The Oscars of AI.",
+      "Recognizing and rewarding the select GCCs, enterprises & Strtups and their ensuing noteworthy leaders & professionals across different award categories that have significantly executed the art of solving large, complex & unresolved problems in AI arena",
     ctaText: "Nominate Now",
-    image:
-      "assets/img/hero/awardsslide.jpg",
-    thumbnailTitle: "Pinnacle Excellence Awards",
+    image: "assets/img/hero/awardsslide.jpg",
+    thumbnailTitle: "Industry Recognition Awards",
     duration: "3 min read",
     featuredGraphic:
       "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
     logos: [
-      {
-        image: "assets/img/subbrands/61.png",
-        text: "",
-      },
+      { image: "assets/img/subbrands/61.png", text: "" },
       { image: "assets/img/subbrands/62.png", text: "" },
       { image: "assets/img/subbrands/63.png", text: "" },
       { image: "assets/img/subbrands/64.png", text: "" },
@@ -291,30 +263,36 @@ export const SLIDES: SlideData[] = [
   },
   {
     id: 5,
-    title: "Intelligence Ecosystem: Atlas, Flix & Quants",
+    title: "Industry Insights and Knowledge Library",
     tagline: "Knowledge & Insights",
     description:
-      "A trifecta of strategic intelligence: Navigate market shifts with Atlas, master concepts through Flix video masterclasses, and benchmark performance with Quants analytical reports.",
+      "Featured articles, blogs, case studies, white papers, solution accelerators and engaging & immersive video streaming content.",
     ctaText: "Access Knowledge Hub",
-    image:
-      "assets/img/hero/atlasslide.jpg",
-    thumbnailTitle: "Atlas, Flix & Quants",
+    image: "assets/img/hero/atlasslide.jpg",
+    thumbnailTitle: "Largest Knowledge Library",
     duration: "Strategic Suite",
     featuredGraphic:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
     logos: [
-      {
-        image: "assets/img/subbrands/atlas-Photoroom.png",
-        text: "",
-      },
-      {
-        image: "assets/img/subbrands/3aiflix.png",
-        text: "",
-      },
-      {
-        image: "assets/img/subbrands/quants-Photoroom.png",
-        text: "",
-      },
+      { image: "assets/img/subbrands/atlas-Photoroom.png", text: "" },
+      { image: "assets/img/subbrands/3aiflix.png", text: "" },
+      // { image: "assets/img/subbrands/quants-Photoroom.png", text: "" },
+    ],
+  },
+  {
+    id: 6,
+    title: "Industry Research and Reports",
+    tagline: "Quants- QuantX",
+    description:
+      "Researching & publishing fact-based AI industry insights reports, dossiers & compendiums that help executives, leaders and decision makers.",
+    ctaText: "View Reports",
+    image: "assets/img/hero/sevenslide.jpg",
+    thumbnailTitle: "Industry Research and Reports",
+    duration: "Dossiers & Reports",
+    featuredGraphic:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    logos: [
+      { image: "assets/img/subbrands/quants-Photoroom.png", text: "" },
     ],
   },
 ];

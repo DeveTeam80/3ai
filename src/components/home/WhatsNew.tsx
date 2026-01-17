@@ -13,7 +13,7 @@ const WhatsNew: React.FC = () => {
   };
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-slate-100/30">
+    <section className="pt-20 px-6 md:px-12 bg-slate-100/30">
       <div className="max-w-7xl mx-auto">
         
         {/* --- TOP SECTION (70% Content / 30% Ad) --- */}

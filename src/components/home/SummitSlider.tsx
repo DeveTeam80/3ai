@@ -65,9 +65,10 @@ const SummitSlider: React.FC = () => {
 
   return (
     <div className="min-h-[80vh] bg-white dark:bg-zinc-950 text-black dark:text-white pt-20 px-4 md:px-12 lg:px-24 transition-colors">
+      
       <div className="max-w-7xl mx-auto flex flex-col items-start mb-12">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-8">
-          <h1 className="text-5xl font-bold leading-[1.1]">How <span className="gradient-text">We</span> drive Impact</h1>
+          <h1 className="text-5xl font-bold leading-[1.1]">Upcoming <span className="gradient-text">Industry Events</span></h1>
           {/* Ensure TabSwitcher handles 'Summits' | 'Roundtables' | 'Specials' */}
           <TabSwitcher activeTab={activeTab} onTabChange={setActiveTab as any} />
         </div>
@@ -115,11 +116,7 @@ const SummitSlider: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* --- BOTTOM SECTION: Horizontal Ad --- */}
-        <div className="w-full h-32 bg-slate-200/50 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-slate-400 gap-2">
-           <span className="text-xs uppercase font-bold tracking-widest">Advertisement</span>
-           <span className="text-sm">Horizontal Banner (728x90)</span>
-        </div>
+
     </div>
   );
 };

@@ -12,7 +12,7 @@ const MarketPulseSection: React.FC = () => {
               <Linkedin size={14} /> LinkedIn Pulse
             </div> */}
             <h1 className="text-5xl font-bold leading-[1.1] mb-8 tracking-tighter">
-              Market <span className="gradient-text">Pulse.</span>
+              Industry <span className="gradient-text">Pulse.</span>
             </h1>
           </div>
           <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">

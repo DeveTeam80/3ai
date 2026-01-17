@@ -52,10 +52,10 @@ interface StatsSidebarProps {
 
 export const StatsSidebar: React.FC<StatsSidebarProps> = ({ isDark }) => {
   const stats = [
-    { label: "Active Members", count: 56000, icon: <Users className="w-5 h-5" /> },
-    { label: "GCC Leaders", count: 690, icon: <ShieldCheck className="w-5 h-5" /> },
-    { label: "Thought Leaders", count: 1600, icon: <Award className="w-5 h-5" /> },
-    { label: "GCCs", count: 430, icon: <Zap className="w-5 h-5" /> },
+    { label: "Active Members", count: 58000, icon: <Users className="w-5 h-5" /> },
+    { label: "GCC Leaders", count: 740, icon: <ShieldCheck className="w-5 h-5" /> },
+    { label: "Thought Leaders", count: 1700, icon: <Award className="w-5 h-5" /> },
+    { label: "GCCs", count: 440, icon: <Zap className="w-5 h-5" /> },
   ];
 
   return (

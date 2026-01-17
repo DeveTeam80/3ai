@@ -1,27 +1,28 @@
 import React from "react";
 import { MailCheck } from "lucide-react";
-import { LEADERS_LIST } from "../../data/mockData";
 
 const ForumsSection: React.FC = () => {
   const imageNumbers = [
     26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
   ];
 
-  // Dynamically determine extension
   const dummyImages = imageNumbers.map((num) => {
     const extension = num === 36 ? "png" : "jpg";
     return `/assets/img/subbrands/${num}.${extension}`;
   });
+
   const columns = [
-    dummyImages.slice(0, 4), // 26, 27, 28, 29
-    dummyImages.slice(4, 8), // 30, 31, 32, 33
-    dummyImages.slice(8, 12), // 34, 35, 36, 37
-    dummyImages.slice(12, 16), // 38, 39, 40, 41
+    dummyImages.slice(0, 4),
+    dummyImages.slice(4, 8),
+    dummyImages.slice(8, 12),
+    dummyImages.slice(12, 16),
   ];
+
   return (
     <section className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-20 items-start">
+          {/* LEFT COLUMN: Text and Cards */}
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">
@@ -31,6 +32,7 @@ const ForumsSection: React.FC = () => {
                 Access the upper crest of global AI and GCC leadership.
               </p>
             </div>
+
             <div className="space-y-6">
               {[
                 {
@@ -39,6 +41,13 @@ const ForumsSection: React.FC = () => {
                   desc: "Reserved exclusively for MDs, CXOs, and Country Heads defining India's landscape.",
                   color: "hover:border-amber-500/50",
                   bg: "bg-amber-500/5",
+                },
+                {
+                  logo: "assets/img/subbrands/49-Photoroom.png",
+                  title: "GCC Leaders Circle (GLC)",
+                  desc: "The veteran architects and strategic visionaries behind enterprise-grade AI stacks.",
+                  color: "hover:border-blue-500/50",
+                  bg: "bg-blue-500/5",
                 },
                 {
                   logo: "assets/img/subbrands/42.jpg",
@@ -79,52 +88,55 @@ const ForumsSection: React.FC = () => {
                 </div>
               ))}
             </div>
-            <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
-              <MailCheck size={18} /> Apply for Invitation
-            </button>
           </div>
-          <div className="relative h-[500px] overflow-hidden">
-            <div className="grid grid-cols-4 gap-4 h-full p-4">
-              {columns.map((colImages, colIndex) => (
-                <div key={colIndex} className="relative h-full overflow-hidden">
-                  <div
-                    className={`${
-                      colIndex % 2 === 0
-                        ? "animate-scroll-up"
-                        : "animate-scroll-down"
-                    } flex flex-col gap-4`}
-                  >
-                    {/* Triple the images to ensure there's no gap during the infinite scroll */}
-                    {[...colImages, ...colImages, ...colImages].map(
-                      (path, i) => (
-                        <div
-                          key={`${colIndex}-${i}`}
-                          className="relative aspect-square shrink-0 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-sm"
-                        >
-                          <img
-                            src={path}
-                            alt={`Brand ${i}`}
-                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                            // Adding an error fallback in case the image doesn't exist yet
-                            onError={(e) => {
-                              (e.target as HTMLImageElement).src =
-                                "https://via.placeholder.com/150?text=Brand";
-                            }}
-                          />
-                        </div>
-                      )
-                    )}
-                  </div>
-                </div>
-              ))}
+
+          {/* RIGHT COLUMN: Button and Marquee */}
+          <div className="space-y-8">
+            {/* Button positioned above the marquee */}
+            <div className="flex justify-end">
+              <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-xl rounded-xl font-bold flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform">
+                <MailCheck size={18} /> Express Interest
+              </button>
             </div>
 
-            {/* Visual Overlays: Soft Fades at top and bottom */}
-            {/* <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white via-transparent to-white dark:from-[#0f0f0f] dark:via-transparent dark:to-[#0f0f0f] opacity-90"></div> */}
+            <div className="relative h-[500px] overflow-hidden">
+              <div className="grid grid-cols-4 gap-4 h-full p-4">
+                {columns.map((colImages, colIndex) => (
+                  <div key={colIndex} className="relative h-full overflow-hidden">
+                    <div
+                      className={`${
+                        colIndex % 2 === 0
+                          ? "animate-scroll-up"
+                          : "animate-scroll-down"
+                      } flex flex-col gap-4`}
+                    >
+                      {[...colImages, ...colImages, ...colImages].map(
+                        (path, i) => (
+                          <div
+                            key={`${colIndex}-${i}`}
+                            className="relative aspect-square shrink-0 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 shadow-sm"
+                          >
+                            <img
+                              src={path}
+                              alt={`Brand ${i}`}
+                              className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                              onError={(e) => {
+                                (e.target as HTMLImageElement).src =
+                                  "https://via.placeholder.com/150?text=Brand";
+                              }}
+                            />
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-            {/* Decorative Accents */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+              {/* Decorative Accents */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            </div>
           </div>
         </div>
       </div>

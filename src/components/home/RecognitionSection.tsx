@@ -67,7 +67,7 @@ const EcosystemStack: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter mb-6">
-              <span className='gradient-text'>One Ecosystem. </span><br/>Infinite Intelligence.
+              <span className='gradient-text'>3AI</span> Properties & Offerings
             </h1>
             <p className="text-xl leading-relaxed text-slate-500 dark:text-zinc-400 font-light">
                A unified marketplace providing the infrastructure for the global AI and GCC economy.

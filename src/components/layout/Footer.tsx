@@ -30,8 +30,7 @@ const Footer: React.FC<FooterProps> = ({ isDarkMode }) => {
           </div>
           
           <p className="text-slate-400 font-medium max-w-xs leading-relaxed">
-            The world's largest integrated professional ecosystem for GCC
-            leaders and AI professionals.
+            India's largest Platform and Marketplace for GCC & AI Leaders and leaders.
           </p>
 
           {/* Contact Information extracted from HTML */}
