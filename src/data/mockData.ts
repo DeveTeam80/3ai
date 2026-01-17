@@ -171,7 +171,7 @@ export const NEWS_UPDATES: NewsItem[] = [
 export const SLIDES: SlideData[] = [
   {
     id: 0,
-    title: "India's largest Platform and Marketplace for GCC & AI Leaders and leaders",
+    title: "India's largest Platform and Marketplace for GCC & AI Leaders and Professionals",
     tagline: "India's Definitive Marketplace",
     description:
       "Integrated Platform and Marketplace for leaders, decision-makers, professionals from GCCs, Enterprises and Start-ups.",
